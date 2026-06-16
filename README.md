@@ -1,36 +1,76 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Matt Shill Music Website
 
-## Getting Started
+Marketing site for [Matt Shill Music, LLC](https://www.mattshill.com) — online music lessons with subscription billing via Stripe, student management via My Music Staff, and lesson scheduling via Musikkii.
 
-First, run the development server:
+## Tech stack
+
+- Next.js (App Router)
+- TypeScript
+- Tailwind CSS
+- Deployed on Vercel
+
+## Local development
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Build
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+npm start
+```
 
-## Learn More
+## Site structure
 
-To learn more about Next.js, take a look at the following resources:
+| Route | Purpose |
+|-------|---------|
+| `/` | Homepage — hero, what/who, how, pricing, about, contact |
+| `/free-trial` | My Music Staff free trial signup widget |
+| `/portal` | My Music Staff student portal widget |
+| `/schedule` | Musikkii availability iframe for weekly lesson time requests |
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Configuration
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **Pricing & Stripe links:** [`src/lib/pricing.ts`](src/lib/pricing.ts)
+- **Site copy:** [`src/content/site-copy.ts`](src/content/site-copy.ts)
+- **Contact email:** Update `siteCopy.contact.email` in site-copy.ts
+- **Photos:** Replace placeholder blocks in `hero.tsx` and `about.tsx` when assets are ready
 
-## Deploy on Vercel
+## Deploy to Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. Push this repo to GitHub.
+2. Import the project in [Vercel](https://vercel.com/new).
+3. Deploy with default Next.js settings (no env vars required for initial launch).
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Connect mattshill.com
+
+After deploying to Vercel:
+
+1. In the Vercel project, go to **Settings → Domains** and add `mattshill.com` and `www.mattshill.com`.
+2. At your domain registrar, update DNS:
+
+   **Option A — Vercel nameservers (recommended)**
+
+   Point your domain to Vercel's nameservers shown in the Vercel dashboard.
+
+   **Option B — CNAME**
+
+   | Type | Name | Value |
+   |------|------|-------|
+   | A | `@` | `76.76.21.21` |
+   | CNAME | `www` | `cname.vercel-dns.com` |
+
+3. Wait for DNS propagation (usually minutes, up to 48 hours).
+4. Vercel will provision SSL automatically.
+
+## External integrations
+
+- **Stripe Payment Links** — subscription checkout (monthly/yearly)
+- **Stripe Billing Portal** — linked from nav
+- **My Music Staff** — student portal and free trial widgets
+- **Musikkii Availability** — embedded iframe at `/schedule`
