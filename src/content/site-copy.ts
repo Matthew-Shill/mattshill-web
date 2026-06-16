@@ -5,7 +5,10 @@ export const siteCopy = {
 
   musikkii: {
     name: "Musikkii",
-    footerNote: "Scheduling & subscriptions powered by Musikkii",
+    url: "https://www.musikkii.com",
+    logoSrc: "/Musikkii Logo.svg",
+    teacherAffiliation: "A Musikkii Teacher",
+    footerNote: "Scheduling, billing, and your student portal",
   },
 
   hero: {

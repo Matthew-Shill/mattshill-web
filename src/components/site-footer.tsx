@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { MusikkiiAffiliation } from "@/components/musikkii-affiliation";
 import { siteCopy } from "@/content/site-copy";
 
 export function SiteFooter() {
@@ -8,9 +9,9 @@ export function SiteFooter() {
         <div>
           <p className="text-lg font-semibold">{siteCopy.businessName}</p>
           <p className="mt-1 text-sm text-white/70">{siteCopy.tagline}</p>
-          <p className="mt-2 text-xs text-white/50">
-            {siteCopy.musikkii.footerNote}
-          </p>
+          <div className="mt-8">
+            <MusikkiiAffiliation variant="footer" showFooterNote />
+          </div>
         </div>
         <div className="flex flex-wrap gap-4 text-sm">
           <Link href="/portal" className="text-white/80 hover:text-white">

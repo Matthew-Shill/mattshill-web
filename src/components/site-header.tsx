@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { MusikkiiAffiliation } from "@/components/musikkii-affiliation";
 import { siteCopy } from "@/content/site-copy";
 import { BILLING_PORTAL_URL } from "@/lib/pricing";
 
@@ -114,14 +115,17 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-surface/95 backdrop-blur-sm">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-6 px-4 py-3 sm:px-6">
-        <Link href="/" className="shrink-0">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="/logo.png"
-            alt={siteCopy.businessName}
-            className="h-10 w-auto sm:h-12"
-          />
-        </Link>
+        <div className="flex shrink-0 flex-col gap-1">
+          <Link href="/">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/logo.png"
+              alt={siteCopy.businessName}
+              className="h-10 w-auto sm:h-12"
+            />
+          </Link>
+          <MusikkiiAffiliation variant="header" />
+        </div>
 
         <nav className="hidden min-w-0 flex-1 items-center justify-center gap-5 xl:flex">
           {siteCopy.nav.primarySections.map((item) => (
