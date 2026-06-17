@@ -14,10 +14,21 @@ export function MusikkiiAffiliation({
 
   return (
     <span
-      className={`inline-flex max-w-sm flex-wrap items-center gap-x-1 gap-y-0.5 ${
-        isFooter ? "text-xs" : "text-[10px] leading-none sm:text-[11px]"
+      className={`inline-flex max-w-sm flex-wrap items-center ${
+        isFooter ? "gap-2 text-xs" : "gap-x-1 gap-y-0.5 text-[10px] leading-none sm:text-[11px]"
       }`}
     >
+      {isFooter && (
+        <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-white">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={musikkii.logoSrc}
+            alt=""
+            className="h-3.5 w-auto"
+            aria-hidden
+          />
+        </span>
+      )}
       <span
         className={`font-medium ${isFooter ? "text-white/80" : "text-[#0331bd]"}`}
       >
