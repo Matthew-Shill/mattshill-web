@@ -2,6 +2,14 @@ export const siteCopy = {
   businessName: "Matt Shill Music",
   tagline:
     "Serious training. Creative lessons. Music you actually want to play.",
+  seo: {
+    title: "Matt Shill Music | Online Music Lessons",
+    description:
+      "Online music lessons in piano, guitar, voice, bass & drums with Matt Shill. Conservatory-trained teacher for kids, adults & audition prep. Book a free trial.",
+    lessonsIndexTitle: "Online Music Lessons by Instrument | Matt Shill Music",
+    lessonsIndexDescription:
+      "Browse online piano, guitar, voice, bass, drums, and songwriting lessons with Matt Shill. One-on-one weekly training with a free trial.",
+  },
 
   musikkii: {
     name: "Musikkii",
@@ -14,9 +22,11 @@ export const siteCopy = {
   hero: {
     headline: "From First Chord to",
     headlineAccent: "Conservatory Auditions.",
+    subtitle:
+      "One-on-one online music lessons in piano, guitar, voice, bass, drums, and songwriting — serious training, creative lessons, and music you actually want to play.",
     cta: "Book Your Free Trial",
     ctaSecondary: "See How Lessons Work",
-    ctaSecondaryHref: "#how",
+    ctaSecondaryHref: "/#how",
   },
 
   whoItsFor: {
@@ -258,31 +268,36 @@ export const siteCopy = {
     moreLabel: "More",
     portalsLabel: "Portals",
     primarySections: [
-      { label: "How It Works", href: "#how" },
-      { label: "Pricing", href: "#pricing" },
-      { label: "About", href: "#about" },
-      { label: "Contact", href: "#contact" },
+      { label: "Lessons", href: "/lessons" },
+      { label: "How It Works", href: "/#how" },
+      { label: "Pricing", href: "/#pricing" },
+      { label: "About", href: "/#about" },
+      { label: "Contact", href: "/#contact" },
     ],
     moreSections: [
-      { label: "Who It's For", href: "#who" },
-      { label: "NML Guarantee", href: "#nml" },
-      { label: "FAQ", href: "#faq" },
+      { label: "Who It's For", href: "/#who" },
+      { label: "NML Guarantee", href: "/#nml" },
+      { label: "FAQ", href: "/#faq" },
     ],
     sections: [
-      { label: "Who It's For", href: "#who" },
-      { label: "How It Works", href: "#how" },
-      { label: "NML Guarantee", href: "#nml" },
-      { label: "Pricing", href: "#pricing" },
-      { label: "About", href: "#about" },
-      { label: "FAQ", href: "#faq" },
-      { label: "Contact", href: "#contact" },
+      { label: "Lessons", href: "/lessons" },
+      { label: "Who It's For", href: "/#who" },
+      { label: "How It Works", href: "/#how" },
+      { label: "NML Guarantee", href: "/#nml" },
+      { label: "Pricing", href: "/#pricing" },
+      { label: "About", href: "/#about" },
+      { label: "FAQ", href: "/#faq" },
+      { label: "Contact", href: "/#contact" },
     ],
   },
 
   freeTrialPage: {
     title: "Book your free trial",
+    metaTitle: "Free Trial Online Music Lesson | Matt Shill Music",
     description:
-      "Tell me a little about yourself and what you'd like to work on. I'll reach out within 24 hours to confirm your trial lesson time.",
+      "Book a free online music lesson trial with Matt Shill. Tell me your goals — piano, guitar, voice, and more — and I'll confirm a time within 24 hours.",
+    seoBody:
+      "Your free trial is a no-pressure online music lesson where we talk through goals, play a bit so I can assess your level, and see whether weekly lessons are the right fit. Students of every age start here — beginners, returning adults, and audition-track players alike.",
     highlights: [
       "No commitment — just a chance to see if we're a good fit",
       "We'll discuss your goals and assess your current level",
@@ -293,8 +308,11 @@ export const siteCopy = {
 
   schedulePage: {
     title: "Choose your weekly lesson time",
+    metaTitle: "Schedule Online Music Lessons | Matt Shill Music",
     description:
-      "Use Musikkii to pick your lesson length, time zone, and preferred weekly slot. I'll review your request and confirm by email — usually within one business day.",
+      "Schedule your weekly online music lesson time with Matt Shill through Musikkii. Pick length, time zone, and preferred slot — usually confirmed within one business day.",
+    seoBody:
+      "After you subscribe, use this page to choose the weekly slot that fits your life. All confirmed online music lessons are one-on-one, and your schedule lives in Musikkii alongside assignments and notes.",
     highlights: [
       "Subscribe through Musikkii first, then choose your weekly time here",
       "All times shown in your selected time zone",
@@ -305,13 +323,22 @@ export const siteCopy = {
 
   portalPage: {
     title: "Student Portal",
+    metaTitle: "Student Portal | Matt Shill Music",
     description:
-      "Your home base for lessons — schedule, assignments, and progress between sessions. Powered by Musikkii as we transition from My Music Staff to the Musikkii app.",
+      "Log in to your Matt Shill Music student portal for schedule, assignments, recordings, and progress between online music lessons.",
+    seoBody:
+      "Current students use the portal between lessons for schedule changes, practice assignments, lesson notes, and recordings. Powered by Musikkii as we transition from My Music Staff.",
     highlights: [
       "Upcoming lesson schedule and calendar",
       "Practice assignments and lesson notes",
       "Recordings and resources from past lessons",
       "Direct messaging with me through the portal",
     ],
+  },
+
+  lessonsIndex: {
+    title: "Online music lessons by instrument",
+    intro:
+      "Every instrument path is one-on-one, goal-based, and taught live online. Pick the lesson track that matches what you want to learn — then book a free trial.",
   },
 } as const;

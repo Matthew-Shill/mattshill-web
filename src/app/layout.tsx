@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { siteCopy } from "@/content/site-copy";
+import { SITE_KEYWORDS, SITE_NAME, SITE_URL } from "@/lib/site";
 import "./globals.css";
 
 const inter = Inter({
@@ -9,16 +10,44 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Matt Shill Music | Online Music Lessons",
-  description: siteCopy.tagline,
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: siteCopy.seo.title,
+    template: `%s | ${SITE_NAME}`,
+  },
+  description: siteCopy.seo.description,
+  keywords: [...SITE_KEYWORDS],
+  authors: [{ name: "Matt Shill", url: SITE_URL }],
+  creator: "Matt Shill",
+  publisher: SITE_NAME,
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
-    title: "Matt Shill Music | Online Music Lessons",
-    description: siteCopy.tagline,
-    url: "https://www.mattshill.com",
-    siteName: "Matt Shill Music",
+    title: siteCopy.seo.title,
+    description: siteCopy.seo.description,
+    url: SITE_URL,
+    siteName: SITE_NAME,
     locale: "en_US",
     type: "website",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: siteCopy.seo.title,
+    description: siteCopy.seo.description,
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
+  category: "education",
 };
 
 export default function RootLayout({

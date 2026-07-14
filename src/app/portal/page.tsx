@@ -1,11 +1,17 @@
+import type { Metadata } from "next";
 import { MmsWidget } from "@/components/mms-widget";
 import { WidgetPageLayout } from "@/components/widget-page-layout";
 import { siteCopy } from "@/content/site-copy";
 import { MMS_WIDGETS } from "@/lib/pricing";
 
-export const metadata = {
-  title: "Student Portal | Matt Shill Music",
+export const metadata: Metadata = {
+  title: { absolute: siteCopy.portalPage.metaTitle },
   description: siteCopy.portalPage.description,
+  alternates: { canonical: "/portal" },
+  robots: {
+    index: false,
+    follow: false,
+  },
 };
 
 export default function PortalPage() {
@@ -13,6 +19,7 @@ export default function PortalPage() {
     <WidgetPageLayout
       title={siteCopy.portalPage.title}
       description={siteCopy.portalPage.description}
+      seoBody={siteCopy.portalPage.seoBody}
       highlights={siteCopy.portalPage.highlights}
     >
       <MmsWidget

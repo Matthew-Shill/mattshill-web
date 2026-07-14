@@ -121,6 +121,8 @@ function StepContent({ stepIndex }: { stepIndex: number }) {
             controls
             preload="metadata"
             playsInline
+            title="Sample Never Miss A Lesson custom video lesson"
+            aria-label="Sample Never Miss A Lesson custom video lesson from Matt Shill Music"
           >
             <source src={nml.sampleVideo} type="video/mp4" />
           </video>

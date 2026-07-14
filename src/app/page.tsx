@@ -1,3 +1,4 @@
+import { HomeJsonLd } from "@/components/json-ld";
 import { About } from "@/components/about";
 import { Contact } from "@/components/contact";
 import { Faq } from "@/components/faq";
@@ -13,6 +14,7 @@ import { WhoItsFor } from "@/components/who-its-for";
 export default function Home() {
   return (
     <>
+      <HomeJsonLd />
       <SiteHeader />
       <main className="flex-1">
         <Hero />

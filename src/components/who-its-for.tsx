@@ -1,4 +1,32 @@
+import Link from "next/link";
 import { siteCopy } from "@/content/site-copy";
+
+const INSTRUMENT_HREF: Record<string, string> = {
+  Piano: "/lessons/piano",
+  Guitar: "/lessons/guitar",
+  Voice: "/lessons/voice",
+  Vocals: "/lessons/voice",
+  Bass: "/lessons/bass",
+  Drums: "/lessons/drums",
+  Songwriting: "/lessons/songwriting",
+  Production: "/lessons/songwriting",
+};
+
+function InstrumentChip({ label }: { label: string }) {
+  const href = INSTRUMENT_HREF[label];
+  const className =
+    "rounded-full bg-accent-subtle px-3 py-1 text-xs font-medium text-accent transition-colors hover:bg-accent hover:text-white";
+
+  if (!href) {
+    return <span className={className}>{label}</span>;
+  }
+
+  return (
+    <Link href={href} className={className}>
+      {label}
+    </Link>
+  );
+}
 
 export function WhoItsFor() {
   return (
@@ -26,12 +54,7 @@ export function WhoItsFor() {
               <p className="mt-3 text-muted">{path.description}</p>
               <div className="mt-5 flex flex-wrap gap-2">
                 {path.instruments.map((instrument) => (
-                  <span
-                    key={instrument}
-                    className="rounded-full bg-accent-subtle px-3 py-1 text-xs font-medium text-accent"
-                  >
-                    {instrument}
-                  </span>
+                  <InstrumentChip key={instrument} label={instrument} />
                 ))}
               </div>
             </div>
@@ -42,8 +65,18 @@ export function WhoItsFor() {
           <p className="text-sm font-semibold text-muted">
             {siteCopy.whoItsFor.alsoTeach.label}
           </p>
-          <p className="mt-2 text-sm text-foreground">
-            {siteCopy.whoItsFor.alsoTeach.items.join(" · ")}
+          <div className="mt-3 flex flex-wrap justify-center gap-2">
+            {siteCopy.whoItsFor.alsoTeach.items.map((item) => (
+              <InstrumentChip key={item} label={item} />
+            ))}
+          </div>
+          <p className="mt-4 text-sm text-muted">
+            <Link
+              href="/lessons"
+              className="font-semibold text-accent hover:underline"
+            >
+              Browse all online music lessons
+            </Link>
           </p>
         </div>
       </div>

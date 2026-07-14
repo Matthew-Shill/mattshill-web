@@ -18,7 +18,7 @@ export function Hero() {
             </span>
           </h1>
           <p className="mt-6 max-w-lg text-lg text-white/80">
-            {siteCopy.tagline}
+            {siteCopy.hero.subtitle}
           </p>
           <div className="mt-8 flex flex-wrap gap-4">
             <Link
@@ -39,7 +39,7 @@ export function Hero() {
         <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-white/10">
           <Image
             src="/weddingpiano.jpg"
-            alt="Matt Shill performing at a piano"
+            alt="Matt Shill teaching and performing piano — online music lessons"
             fill
             className="object-cover"
             priority

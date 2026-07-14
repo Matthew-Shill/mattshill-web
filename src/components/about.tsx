@@ -9,7 +9,7 @@ export function About() {
           <div className="relative aspect-[3/4] overflow-hidden rounded-2xl border border-border">
             <Image
               src="/Headshot.jpg"
-              alt="Matt Shill, music teacher and performer"
+              alt="Matt Shill, online music teacher for piano, guitar, voice, and more"
               fill
               className="object-cover object-top"
               sizes="(max-width: 1024px) 100vw, 50vw"
