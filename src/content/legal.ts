@@ -24,7 +24,7 @@ export const privacyPolicy: LegalDocument = {
     "How Matt Shill Music collects, uses, and shares information for online music lessons, scheduling, billing, and the student portal.",
   lastUpdated: LAST_UPDATED,
   intro:
-    "This Privacy Policy explains how Matt Shill Music, LLC (“Matt Shill Music,” “we,” “us,” or “our”) collects, uses, and shares information when you visit mattshill.com, book a free trial, subscribe to lessons, or use our student portal.",
+    "This Privacy Policy explains how Matt Shill Music (“we,” “us,” or “our”) collects, uses, and shares information when you visit mattshill.com, book a free trial, subscribe to lessons, or use our student portal.",
   sections: [
     {
       heading: "Who we are",
@@ -132,7 +132,7 @@ export const privacyPolicy: LegalDocument = {
     {
       heading: "Contact",
       paragraphs: [
-        "Matt Shill Music, LLC",
+        "Matt Shill Music",
         "Email: [mattshill@musikkii.com](mailto:mattshill@musikkii.com)",
         "Website: [www.mattshill.com](https://www.mattshill.com)",
       ],
@@ -148,7 +148,7 @@ export const termsOfService: LegalDocument = {
     "Terms for Matt Shill Music online lessons, free trials, weekly subscriptions, scheduling, and the student portal.",
   lastUpdated: LAST_UPDATED,
   intro:
-    "These Terms of Service (“Terms”) govern your use of mattshill.com and the online music lessons offered by Matt Shill Music, LLC (“Matt Shill Music,” “we,” “us,” or “our”). By booking a trial, subscribing, or using the site, you agree to these Terms.",
+    "These Terms of Service (“Terms”) govern your use of mattshill.com and the online music lessons offered by Matt Shill Music (“we,” “us,” or “our”). By booking a trial, subscribing, or using the site, you agree to these Terms.",
   sections: [
     {
       heading: "The studio",
@@ -256,8 +256,8 @@ export const termsOfService: LegalDocument = {
       heading: "General",
       paragraphs: [
         "These Terms, together with the [Privacy Policy](/privacy) and the plan you select at checkout, are the entire agreement between you and Matt Shill Music for the website and lessons. They replace any prior informal promises about the same subject.",
-        "These Terms are governed by the laws of the United States and the state in which Matt Shill Music, LLC is organized, without regard to conflict-of-law rules. If a court finds a part of these Terms unenforceable, the rest remains in effect.",
-        "Matt Shill Music, LLC — [mattshill@musikkii.com](mailto:mattshill@musikkii.com).",
+        "These Terms are governed by the laws of the United States, without regard to conflict-of-law rules. If a court finds a part of these Terms unenforceable, the rest remains in effect.",
+        "Matt Shill Music — [mattshill@musikkii.com](mailto:mattshill@musikkii.com).",
       ],
     },
   ],

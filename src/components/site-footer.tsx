@@ -82,8 +82,8 @@ export function SiteFooter() {
       <div className="border-t border-white/10 px-4 py-4 text-xs text-white/50">
         <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-3 sm:flex-row">
           <p>
-            © {new Date().getFullYear()} {siteCopy.businessName}, LLC. All
-            rights reserved.
+            © {new Date().getFullYear()} {siteCopy.businessName}. All rights
+            reserved.
           </p>
           <nav aria-label="Legal" className="flex items-center gap-4">
             <Link href="/privacy" className="hover:text-white">

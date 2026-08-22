@@ -1,6 +1,6 @@
 # Matt Shill Music Website
 
-Marketing site for [Matt Shill Music, LLC](https://www.mattshill.com) — online music lessons with subscription billing via Stripe, student management via My Music Staff, and lesson scheduling via Musikkii.
+Marketing site for [Matt Shill Music](https://www.mattshill.com) — online music lessons with subscription billing via Stripe, student management via My Music Staff, and lesson scheduling via Musikkii.
 
 ## Tech stack
 
