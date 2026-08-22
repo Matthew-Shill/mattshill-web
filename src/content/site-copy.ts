@@ -261,6 +261,11 @@ export const siteCopy = {
     ],
   },
 
+  legal: {
+    privacy: "Privacy Policy",
+    terms: "Terms of Service",
+  },
+
   nav: {
     studentPortal: "Student Portal",
     billingPortal: "Billing Portal",
@@ -340,5 +345,29 @@ export const siteCopy = {
     title: "Online music lessons by instrument",
     intro:
       "Every instrument path is one-on-one, goal-based, and taught live online. Pick the lesson track that matches what you want to learn — then book a free trial.",
+  },
+
+  errors: {
+    notFound: {
+      code: "404",
+      metaTitle: "Page not found | Matt Shill Music",
+      description:
+        "That page isn't on the program. Return home or browse online music lessons with Matt Shill.",
+      eyebrow: "Page not found",
+      title: "This page missed the lesson.",
+      body: "The URL you asked for isn't on the program. Head home, browse lessons, or book a free trial — we'll get you back to the music.",
+    },
+    unexpected: {
+      code: "500",
+      title: "This page hit a wrong note.",
+      body: "Something unexpected stopped this page from loading. Try again, or go back to the homepage and start from a familiar measure.",
+      retry: "Try again",
+      reference: "Reference",
+    },
+    home: "Back home",
+    lessons: "Browse lessons",
+    freeTrial: "Book a free trial",
+    contact: "Email me",
+    instrumentLabel: "Or jump into a lesson track",
   },
 } as const;

@@ -79,9 +79,21 @@ export function SiteFooter() {
           </div>
         </div>
       </div>
-      <div className="border-t border-white/10 px-4 py-4 text-center text-xs text-white/50">
-        © {new Date().getFullYear()} {siteCopy.businessName}, LLC. All rights
-        reserved.
+      <div className="border-t border-white/10 px-4 py-4 text-xs text-white/50">
+        <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-3 sm:flex-row">
+          <p>
+            © {new Date().getFullYear()} {siteCopy.businessName}, LLC. All
+            rights reserved.
+          </p>
+          <nav aria-label="Legal" className="flex items-center gap-4">
+            <Link href="/privacy" className="hover:text-white">
+              {siteCopy.legal.privacy}
+            </Link>
+            <Link href="/terms" className="hover:text-white">
+              {siteCopy.legal.terms}
+            </Link>
+          </nav>
+        </div>
       </div>
     </footer>
   );
