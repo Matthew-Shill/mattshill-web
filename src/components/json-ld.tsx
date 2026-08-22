@@ -83,6 +83,25 @@ export function HomeJsonLd() {
       "Songwriting",
       "Music production",
     ],
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "5",
+      bestRating: "5",
+      reviewCount: String(siteCopy.testimonials.items.length),
+    },
+    review: siteCopy.testimonials.items.map((item) => ({
+      "@type": "Review",
+      author: {
+        "@type": "Person",
+        name: item.name,
+      },
+      reviewBody: item.quote,
+      reviewRating: {
+        "@type": "Rating",
+        ratingValue: "5",
+        bestRating: "5",
+      },
+    })),
     offerCatalog: {
       "@type": "OfferCatalog",
       name: "Weekly music lesson subscriptions",

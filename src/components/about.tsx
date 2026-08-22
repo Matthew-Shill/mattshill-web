@@ -1,9 +1,10 @@
 import Image from "next/image";
+import { TrialCta } from "@/components/trial-cta";
 import { siteCopy } from "@/content/site-copy";
 
 export function About() {
   return (
-    <section id="about" className="py-20">
+    <section id="about" className="py-16">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="grid gap-12 lg:grid-cols-2 lg:items-start">
           <div className="relative aspect-[3/4] overflow-hidden rounded-2xl border border-border">
@@ -33,6 +34,8 @@ export function About() {
                 <p key={paragraph.slice(0, 40)}>{paragraph}</p>
               ))}
             </div>
+
+            <TrialCta align="left" />
           </div>
         </div>
       </div>

@@ -2,19 +2,19 @@ import { siteCopy } from "@/content/site-copy";
 
 export function HowWeTeach() {
   return (
-    <section id="how" className="bg-surface py-20">
+    <section id="how" className="bg-surface py-16">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <div className="mb-12 max-w-3xl">
+        <div className="mb-10 max-w-3xl">
           <p className="text-sm font-semibold uppercase tracking-widest text-accent">
             {siteCopy.how.eyebrow}
           </p>
           <h2 className="mt-2 text-3xl font-bold sm:text-4xl">
             {siteCopy.how.title}
           </h2>
-          <p className="mt-6 text-lg text-muted">{siteCopy.how.intro}</p>
+          <p className="mt-4 text-lg text-muted">{siteCopy.how.intro}</p>
         </div>
 
-        <div className="mb-12 grid gap-4 md:grid-cols-3">
+        <div className="mb-8 grid gap-4 md:grid-cols-3">
           {siteCopy.how.lessonArc.map((step, index) => (
             <div
               key={step.phase}

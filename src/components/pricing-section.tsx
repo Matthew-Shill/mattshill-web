@@ -27,9 +27,9 @@ export function PricingSection() {
   const offers = getOffersForLength(length);
 
   return (
-    <section id="pricing" className="py-20">
+    <section id="pricing" className="py-16">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <div className="mb-12 text-center">
+        <div className="mb-10 text-center">
           <p className="text-sm font-semibold uppercase tracking-widest text-accent">
             {siteCopy.pricing.title}
           </p>
@@ -59,12 +59,13 @@ export function PricingSection() {
           </div>
         </div>
 
-        <p className="mx-auto mb-10 max-w-2xl text-center text-sm text-muted">
+        <p className="mx-auto mb-8 max-w-2xl text-center text-sm text-muted">
           {siteCopy.pricing.whySubscription}
         </p>
 
         <div className="grid gap-6 md:grid-cols-3">
           {offers.map((offer) => {
+            const isFlexible = offer.id === "mtm";
             const benefits = [
               ...PRICING_BENEFITS,
               offer.id === "mtm"
@@ -76,13 +77,24 @@ export function PricingSection() {
               <div
                 key={offer.id}
                 className={`relative flex flex-col rounded-2xl border bg-surface p-8 shadow-sm ${
-                  offer.bestValue
+                  isFlexible
                     ? "border-accent ring-2 ring-accent/20"
                     : "border-border"
                 }`}
               >
-                {offer.bestValue && (
+                {isFlexible && (
                   <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-accent px-4 py-1 text-xs font-semibold text-white">
+                    {siteCopy.pricing.flexibleBadge}
+                  </span>
+                )}
+                {offer.bestValue && (
+                  <span
+                    className={`absolute -top-3 left-1/2 -translate-x-1/2 rounded-full px-4 py-1 text-xs font-semibold ${
+                      isFlexible
+                        ? "bg-accent text-white"
+                        : "bg-accent-subtle text-accent"
+                    }`}
+                  >
                     {siteCopy.pricing.bestValueBadge}
                   </span>
                 )}
@@ -130,6 +142,12 @@ export function PricingSection() {
                 >
                   {siteCopy.pricing.subscribe}
                 </a>
+                <Link
+                  href="/free-trial"
+                  className="mt-3 block text-center text-sm font-semibold text-accent hover:underline"
+                >
+                  {siteCopy.pricing.trialInstead}
+                </Link>
               </div>
             );
           })}

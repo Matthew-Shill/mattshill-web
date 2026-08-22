@@ -12,25 +12,82 @@ export const siteCopy = {
   },
 
   hero: {
-    headline: "From First Chord to",
-    headlineAccent: "Conservatory Auditions.",
+    headline: "Online lessons that",
+    headlineAccent: "actually stick.",
     subtitle:
-      "One-on-one online music lessons in piano, guitar, voice, bass, drums, and songwriting — serious training, creative lessons, and music you actually want to play.",
+      "One-on-one piano, guitar, voice, bass, drums, and songwriting — serious training, music you want to play, from first chord to conservatory auditions.",
     cta: "Book Your Free Trial",
-    ctaSecondary: "See How Lessons Work",
+    ctaNote: "~30 minutes · no credit card · I'll confirm within 24 hours",
+    ctaSecondary: "See how lessons work",
     ctaSecondaryHref: "/#how",
+    proof: [
+      "Frost & Eastman trained",
+      "Students at Juilliard, Berklee & MSM",
+      "Never Miss A Lesson™ included",
+    ],
+  },
+
+  testimonials: {
+    eyebrow: "5-star reviews",
+    title: "Parents and students, in their words",
+    subtitle:
+      "Long-term families, adult beginners, and first-time trial students — the same weekly lessons, tailored to the student.",
+    items: [
+      {
+        name: "Sindhu J.",
+        role: "Parent",
+        instrument: "Piano",
+        quote:
+          "I hired Matt over a year ago and he still teaches my kid piano. Her improvement is remarkable and she loves to keep learning. It is a testament to how good a teacher Matt is.",
+      },
+      {
+        name: "Christie M.",
+        role: "Parent",
+        instrument: "Guitar",
+        quote:
+          "I can't explain how much more confident my son feels now — and how much he's learning about the music he likes. He definitely clicks with Matt, who was upfront and organized with scheduling.",
+      },
+      {
+        name: "Dailah Mial",
+        role: "Student",
+        instrument: "Guitar",
+        quote:
+          "I've been learning guitar from Matt for six months, and even though our lessons are virtual, they always feel engaging and fun. He's patient, explains things until they click, and always tailors lessons to what I want to learn.",
+      },
+      {
+        name: "Jadyn G.",
+        role: "Student",
+        instrument: "Guitar",
+        quote:
+          "I started as a beginner, and after the free trial I knew I'd be taking lessons. Matt is attentive, organized, and patient — he's not just teaching people to play, but to be confident performers. I've noticed a ton of progress.",
+      },
+      {
+        name: "Graham Corbett",
+        role: "Student",
+        instrument: "Guitar",
+        quote:
+          "I'm 24 and had been playing guitar for almost a year. After four months with Matt, my progress has exploded — I even started bass and keyboard. He meets you where you're at and genuinely cares that you're improving.",
+      },
+      {
+        name: "Madysen G.",
+        role: "Student",
+        instrument: "Voice",
+        quote:
+          "He helped make me feel comfortable singing. He's one of the few people I felt safe singing around, and he taught me a lot that has already made me a better singer.",
+      },
+    ],
   },
 
   whoItsFor: {
     eyebrow: "Who It's For",
     title: "Lessons built around your goals",
     subtitle:
-      "Whether you're picking up an instrument for the first time or preparing for a conservatory audition, I tailor every lesson to where you are and where you want to go.",
+      "First instrument or conservatory audition — every lesson is tailored to where you are and where you want to go.",
     paths: [
       {
         title: "Kids & Teens",
         description:
-          "Build confidence, technique, and creativity early — with lessons that stay engaging week after week.",
+          "Technique, confidence, and music they actually want to play — so practice doesn't become a fight.",
         instruments: ["Piano", "Guitar", "Voice", "Drums"],
       },
       {
@@ -52,65 +109,36 @@ export const siteCopy = {
         instruments: ["Piano", "Guitar", "Production", "Songwriting"],
       },
     ],
-    alsoTeach: {
-      label: "Also available",
-      items: [
-        "Piano",
-        "Guitar",
-        "Bass",
-        "Vocals",
-        "Drums",
-        "Songwriting",
-        "Production",
-      ],
-    },
-  },
-
-  outcomes: {
-    eyebrow: "Student Outcomes",
-    title: "Real progress, real results",
-    subtitle:
-      "Students accepted to Juilliard, Berklee, Manhattan School of Music, and more — plus younger students writing, recording, and releasing professional-grade music before graduation.",
-    stats: [
-      { value: "15+", label: "Years teaching" },
-      { value: "1M+", label: "Streams on debut album" },
-      { value: "7", label: "Instruments taught" },
-    ],
+    browseLessons: "Browse all online music lessons",
   },
 
   nml: {
     eyebrow: "Signature Guarantee",
     title: "Never Miss A Lesson™",
     description:
-      "When a student can't attend live, I record a custom video lesson with updated notes. Progress never stops.",
+      "When a student can't attend live, I record a custom video lesson with updated notes. Progress never stops — included with every weekly plan.",
     bullets: [
       "Included with every weekly subscription",
       "Built for busy families and packed calendars",
       "Every live lesson is recorded too",
     ],
-    flowTitle: "Never Miss A Lesson™ flow",
     sampleVideo: "/nml-sample-video.mp4",
+    sampleVideoLabel: "Sample custom video lesson",
     steps: [
       {
-        label: "Conflict comes up",
+        label: "A conflict comes up",
         description:
-          "Emma has a school event during her Tuesday piano lesson.",
-        conflict: {
-          day: "Tue · 4:00 PM lesson",
-          status: "Conflict detected",
-        },
+          "School event, travel, a packed week — Tuesday's lesson can't happen live.",
       },
       {
         label: "Request Never Miss A Lesson™",
         description:
-          "Parent taps NML — the teacher is notified to record a custom video instead.",
-        buttonLabel: "Request NML™ video lesson",
+          "You tap NML. I record a custom video lesson for that week's material.",
       },
       {
         label: "Progress continues",
         description:
-          "A personalized video lesson and updated notes arrive — no week lost.",
-        delivered: "Custom video + updated lesson notes delivered on schedule",
+          "The video and updated notes arrive on schedule. No week lost.",
       },
     ],
   },
@@ -119,7 +147,7 @@ export const siteCopy = {
     eyebrow: "How Lessons Work",
     title: "What a lesson actually looks like",
     intro:
-      "Every lesson is one-on-one and built around you — your goals, your skill level, and the music you care about. No cookie-cutter method books. No going through the motions.",
+      "Every lesson is one-on-one and built around you — your goals, your level, and the music you care about. No cookie-cutter method books.",
     lessonArc: [
       {
         phase: "Week 1",
@@ -147,20 +175,12 @@ export const siteCopy = {
         text: "— not casual weekly check-ins",
       },
       {
-        bold: "Practice assignments and progress tracking",
-        text: "between every lesson — in your student portal",
+        bold: "Practice assignments and notes",
+        text: "in your student portal after every lesson",
       },
       {
-        bold: "Scheduling and lesson management",
-        text: "through the studio portal and this site",
-      },
-      {
-        bold: "Technique, theory, ear training,",
-        text: "and creative exploration in balance",
-      },
-      {
-        bold: "Optional prep for ABRSM, auditions,",
-        text: "or performance opportunities",
+        bold: "Technique, theory, and ear training",
+        text: "balanced with music you want to play",
       },
     ],
   },
@@ -169,10 +189,12 @@ export const siteCopy = {
     title: "Pricing",
     headline: "Weekly Subscription Plans",
     subtitle:
-      "Commit month-to-month, 6 months, or a year — longer commitments lower your monthly rate.",
+      "Start month-to-month, or save with a longer commitment. Not sure yet? Book a free trial first.",
     whySubscription:
-      "Weekly lessons build real skill — I know your progress, your strengths, and what to work on next. Every subscription includes structured planning, progress tracking, and my Never Miss a Lesson guarantee.",
+      "Weekly lessons build real skill — I know your progress, your strengths, and what to work on next. Every plan includes structured planning, the student portal, and Never Miss A Lesson™.",
     subscribe: "Subscribe",
+    trialInstead: "Or start with a free trial",
+    flexibleBadge: "Most flexible",
     bestValueBadge: "Best Value",
     saveBadge: "Save",
     billedMonthly: "billed monthly",
@@ -192,10 +214,9 @@ export const siteCopy = {
     pullQuote:
       "I want every student to leave a lesson feeling like they made real progress — and excited to come back next week.",
     bio: [
-      "I've spent over 15 years teaching students of every age and level — from someone picking up a guitar for the first time to performers preparing for conservatory auditions. My job is to meet you where you are and help you get where you want to go.",
-      "I hold dual degrees in Piano and Guitar Performance from the Frost School of Music at the University of Miami, with early training at the Eastman School of Music. I teach piano, guitar, voice, bass, and drums — blending formal technique with creativity, confidence, and real-world musicianship.",
-      "My students have been accepted to Juilliard, Berklee, Manhattan School of Music, and more. I've also worked with younger students on original songwriting, advanced sight reading, and professional-grade recordings — sometimes before they've finished high school.",
-      "Outside the studio, I'm a songwriter, recording engineer, and performer with over a million streams on my debut album.",
+      "I've spent over 15 years teaching students of every age and level — from a first guitar lesson to conservatory audition prep. My job is to meet you where you are and help you get where you want to go.",
+      "I hold dual degrees in Piano and Guitar Performance from the Frost School of Music at the University of Miami, with early training at the Eastman School of Music. I teach piano, guitar, voice, bass, and drums — blending formal technique with creativity and real-world musicianship.",
+      "My students have been accepted to Juilliard, Berklee, Manhattan School of Music, and more. Outside the studio, I'm a songwriter, recording engineer, and performer with over a million streams on my debut album.",
     ],
   },
 
@@ -204,9 +225,19 @@ export const siteCopy = {
     title: "Common questions",
     items: [
       {
-        question: "Are lessons online or in-person?",
+        question: "Are online lessons as effective as in-person?",
         answer:
-          "Lessons are held online via video call. You'll need a reliable internet connection, a device with a camera, and your instrument. I work with students across time zones.",
+          "For technique, repertoire, theory, and audition coaching — yes. Lessons are live, one-on-one video. You'll need a reliable connection, a camera, and your instrument. I work with students across time zones.",
+      },
+      {
+        question: "What ages and levels do you teach?",
+        answer:
+          "Kids, teens, and adults — complete beginners through conservatory audition prep. If you can sit at the instrument for a focused half hour, we can work together. We'll confirm fit at the free trial.",
+      },
+      {
+        question: "What's included in the free trial?",
+        answer:
+          "About 30 minutes, no credit card, no commitment. We talk through your goals, play a bit so I can assess your level, and see whether weekly lessons are the right fit. I'll confirm a time within 24 hours.",
       },
       {
         question: "What do I need to get started?",
@@ -216,17 +247,17 @@ export const siteCopy = {
       {
         question: "What if we miss a lesson?",
         answer:
-          "Every subscription includes my Never Miss a Lesson guarantee. Life happens — we'll work together to reschedule or make it up so you don't lose progress.",
-      },
-      {
-        question: "Can I try before subscribing?",
-        answer:
-          "Yes. Book a free trial lesson and we'll spend time getting to know your goals, assessing your level, and making sure we're a good fit — no commitment required.",
+          "Every subscription includes Never Miss A Lesson™. If you can't attend live, I record a custom video lesson with updated notes so you don't lose the week. We can also reschedule when needed.",
       },
       {
         question: "How does billing work?",
         answer:
-          "Choose a weekly lesson length and subscribe monthly or yearly through Stripe (save 10% with annual billing). After subscribing, you'll pick your weekly lesson time. Cancel anytime before your next billing cycle.",
+          "Choose a weekly lesson length and subscribe month-to-month, 6 months, or annually through Stripe. After subscribing, you'll pick your weekly time. Month-to-month plans can be canceled before the next billing cycle.",
+      },
+      {
+        question: "How soon can we start, and what times are open?",
+        answer:
+          "Most new students start within a week of the trial. I teach across time zones — we'll find a recurring weekly slot that fits. Availability is limited, so the trial is the fastest way to lock a time.",
       },
       {
         question: "Do parents sit in on kids' lessons?",
@@ -237,19 +268,19 @@ export const siteCopy = {
   },
 
   contact: {
-    title: "Get in touch",
+    title: "Ready to see if we're a fit?",
     email: "contact@mattshill.com",
     phone: undefined as string | undefined,
-    emailLabel: "Email Me",
+    emailLabel: "Email me",
     phoneLabel: "Call Me",
-    trialLabel: "Free Trial",
+    trialLabel: "Book Your Free Trial",
     scheduleLabel: "Schedule a Time",
     responseTime:
-      "I reply to every message within 24 hours.",
+      "Book a free trial and I'll confirm a time within 24 hours. Questions first? Email me anytime.",
     trustSignals: [
-      "15+ years of teaching experience",
-      "Never Miss a Lesson guarantee",
-      "Cancel anytime before your next billing cycle",
+      "No credit card for the trial",
+      "Never Miss A Lesson™ on every plan",
+      "Cancel month-to-month anytime before the next cycle",
     ],
   },
 
@@ -272,12 +303,14 @@ export const siteCopy = {
       { label: "Contact", href: "/#contact" },
     ],
     moreSections: [
+      { label: "Reviews", href: "/#reviews" },
       { label: "Who It's For", href: "/#who" },
       { label: "NML Guarantee", href: "/#nml" },
       { label: "FAQ", href: "/#faq" },
     ],
     sections: [
       { label: "Lessons", href: "/lessons" },
+      { label: "Reviews", href: "/#reviews" },
       { label: "Who It's For", href: "/#who" },
       { label: "How It Works", href: "/#how" },
       { label: "NML Guarantee", href: "/#nml" },

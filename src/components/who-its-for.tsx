@@ -30,9 +30,9 @@ function InstrumentChip({ label }: { label: string }) {
 
 export function WhoItsFor() {
   return (
-    <section id="who" className="py-20">
+    <section id="who" className="py-16">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <div className="mb-12 max-w-3xl">
+        <div className="mb-10 max-w-3xl">
           <p className="text-sm font-semibold uppercase tracking-widest text-accent">
             {siteCopy.whoItsFor.eyebrow}
           </p>
@@ -44,11 +44,11 @@ export function WhoItsFor() {
           </p>
         </div>
 
-        <div className="grid gap-6 sm:grid-cols-2">
+        <div className="grid gap-5 sm:grid-cols-2">
           {siteCopy.whoItsFor.paths.map((path) => (
             <div
               key={path.title}
-              className="rounded-2xl border border-border bg-surface p-8"
+              className="rounded-2xl border border-border bg-surface p-7"
             >
               <h3 className="text-xl font-bold">{path.title}</h3>
               <p className="mt-3 text-muted">{path.description}</p>
@@ -61,24 +61,14 @@ export function WhoItsFor() {
           ))}
         </div>
 
-        <div className="mt-10 rounded-2xl border border-dashed border-border bg-surface/50 px-6 py-5 text-center">
-          <p className="text-sm font-semibold text-muted">
-            {siteCopy.whoItsFor.alsoTeach.label}
-          </p>
-          <div className="mt-3 flex flex-wrap justify-center gap-2">
-            {siteCopy.whoItsFor.alsoTeach.items.map((item) => (
-              <InstrumentChip key={item} label={item} />
-            ))}
-          </div>
-          <p className="mt-4 text-sm text-muted">
-            <Link
-              href="/lessons"
-              className="font-semibold text-accent hover:underline"
-            >
-              Browse all online music lessons
-            </Link>
-          </p>
-        </div>
+        <p className="mt-8 text-center text-sm text-muted">
+          <Link
+            href="/lessons"
+            className="font-semibold text-accent hover:underline"
+          >
+            {siteCopy.whoItsFor.browseLessons}
+          </Link>
+        </p>
       </div>
     </section>
   );

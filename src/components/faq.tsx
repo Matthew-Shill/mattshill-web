@@ -30,7 +30,7 @@ export function Faq() {
   }
 
   return (
-    <section id="faq" className="bg-surface py-20">
+    <section id="faq" className="bg-surface py-16">
       <div className="mx-auto max-w-3xl px-4 sm:px-6">
         <div className="mb-12 text-center">
           <p className="text-sm font-semibold uppercase tracking-widest text-accent">

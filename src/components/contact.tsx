@@ -3,7 +3,7 @@ import { siteCopy } from "@/content/site-copy";
 
 export function Contact() {
   return (
-    <section id="contact" className="py-20">
+    <section id="contact" className="py-16">
       <div className="mx-auto max-w-6xl px-4 text-center sm:px-6">
         <p className="text-sm font-semibold uppercase tracking-widest text-accent">
           Contact
@@ -15,46 +15,29 @@ export function Contact() {
           {siteCopy.contact.responseTime}
         </p>
 
-        <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
+        <div className="mt-8 flex flex-col items-center gap-3">
+          <Link
+            href="/free-trial"
+            className="inline-flex items-center rounded-full bg-accent px-8 py-3 text-base font-semibold text-white transition-colors hover:bg-accent-hover"
+          >
+            {siteCopy.contact.trialLabel}
+          </Link>
+          <p className="text-sm text-muted">{siteCopy.hero.ctaNote}</p>
           <a
             href={`mailto:${siteCopy.contact.email}`}
-            className="inline-flex items-center gap-2 rounded-full border border-border bg-surface px-6 py-3 text-sm font-semibold transition-colors hover:border-accent hover:text-accent"
+            className="text-sm font-semibold text-accent hover:underline"
           >
-            {siteCopy.contact.emailLabel}
+            {siteCopy.contact.emailLabel} · {siteCopy.contact.email}
           </a>
-
           {siteCopy.contact.phone && (
             <a
               href={`tel:${siteCopy.contact.phone.replace(/\D/g, "")}`}
-              className="inline-flex items-center gap-2 rounded-full border border-border bg-surface px-6 py-3 text-sm font-semibold transition-colors hover:border-accent hover:text-accent"
+              className="text-sm font-semibold text-accent hover:underline"
             >
               {siteCopy.contact.phoneLabel}
             </a>
           )}
-
-          <Link
-            href="/free-trial"
-            className="inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-accent-hover"
-          >
-            {siteCopy.contact.trialLabel}
-          </Link>
-
-          <Link
-            href="/schedule"
-            className="inline-flex items-center gap-2 rounded-full border border-border bg-surface px-6 py-3 text-sm font-semibold transition-colors hover:border-accent hover:text-accent"
-          >
-            {siteCopy.contact.scheduleLabel}
-          </Link>
         </div>
-
-        <p className="mt-6 text-sm text-muted">
-          <a
-            href={`mailto:${siteCopy.contact.email}`}
-            className="hover:text-accent"
-          >
-            {siteCopy.contact.email}
-          </a>
-        </p>
 
         <ul className="mx-auto mt-8 flex max-w-lg flex-wrap justify-center gap-x-6 gap-y-2 text-xs text-muted">
           {siteCopy.contact.trustSignals.map((signal) => (
