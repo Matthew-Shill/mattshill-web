@@ -169,14 +169,19 @@ export const siteCopy = {
     title: "Pricing",
     headline: "Weekly Subscription Plans",
     subtitle:
-      "Weekly one-on-one lessons with flexible monthly or yearly billing.",
+      "Commit month-to-month, 6 months, or a year — longer commitments lower your monthly rate.",
     whySubscription:
       "Weekly lessons build real skill — I know your progress, your strengths, and what to work on next. Every subscription includes structured planning, progress tracking, and my Never Miss a Lesson guarantee.",
-    yearlyBadge: "Save 10%",
-    perLessonLabel: "per lesson",
-    asLowAs: "As low as",
     subscribe: "Subscribe",
-    popularBadge: "Most Popular",
+    bestValueBadge: "Best Value",
+    saveBadge: "Save",
+    billedMonthly: "billed monthly",
+    billedPrefix: "billed",
+    billedEverySixMonths: "every 6 months",
+    billedAnnually: "annually",
+    cancelAnytime: "Cancel anytime before your next billing cycle",
+    cancelPrepaid:
+      "Prepaid term — renews automatically at current rate unless canceled at least 7 days before your renewal date",
     afterSubscribe:
       "After subscribing, choose your weekly lesson time to complete setup.",
     scheduleLink: "Choose your weekly lesson time",

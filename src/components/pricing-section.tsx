@@ -4,18 +4,27 @@ import Link from "next/link";
 import { useState } from "react";
 import { siteCopy } from "@/content/site-copy";
 import {
-  type BillingPeriod,
+  type LessonLength,
+  LESSON_LENGTHS,
   PRICING_BENEFITS,
-  PRICING_TIERS,
   formatCurrency,
-  getBillingPrice,
-  getEffectiveMonthly,
-  getPerLessonPrice,
-  getStripeUrl,
+  getOffersForLength,
 } from "@/lib/pricing";
 
+function billingFinePrint(
+  commitmentId: "mtm" | "sixMonth" | "annual",
+  billingTotal: number,
+): string {
+  if (commitmentId === "mtm") return siteCopy.pricing.billedMonthly;
+  if (commitmentId === "sixMonth") {
+    return `${siteCopy.pricing.billedPrefix} ${formatCurrency(billingTotal)} ${siteCopy.pricing.billedEverySixMonths}`;
+  }
+  return `${siteCopy.pricing.billedPrefix} ${formatCurrency(billingTotal)} ${siteCopy.pricing.billedAnnually}`;
+}
+
 export function PricingSection() {
-  const [period, setPeriod] = useState<BillingPeriod>("monthly");
+  const [length, setLength] = useState<LessonLength>(45);
+  const offers = getOffersForLength(length);
 
   return (
     <section id="pricing" className="py-20">
@@ -32,31 +41,21 @@ export function PricingSection() {
           </p>
 
           <div className="mt-8 inline-flex rounded-full border border-border bg-surface p-1">
-            <button
-              type="button"
-              onClick={() => setPeriod("monthly")}
-              className={`rounded-full px-6 py-2 text-sm font-semibold transition-colors ${
-                period === "monthly"
-                  ? "bg-accent text-white"
-                  : "text-muted hover:text-foreground"
-              }`}
-            >
-              Monthly
-            </button>
-            <button
-              type="button"
-              onClick={() => setPeriod("yearly")}
-              className={`rounded-full px-6 py-2 text-sm font-semibold transition-colors ${
-                period === "yearly"
-                  ? "bg-accent text-white"
-                  : "text-muted hover:text-foreground"
-              }`}
-            >
-              Yearly{" "}
-              <span className="ml-1 text-accent">
-                ({siteCopy.pricing.yearlyBadge})
-              </span>
-            </button>
+            {LESSON_LENGTHS.map((option) => (
+              <button
+                key={option}
+                type="button"
+                onClick={() => setLength(option)}
+                aria-pressed={length === option}
+                className={`rounded-full px-6 py-2 text-sm font-semibold transition-colors ${
+                  length === option
+                    ? "bg-accent text-white"
+                    : "text-muted hover:text-foreground"
+                }`}
+              >
+                {option} min
+              </button>
+            ))}
           </div>
         </div>
 
@@ -65,64 +64,58 @@ export function PricingSection() {
         </p>
 
         <div className="grid gap-6 md:grid-cols-3">
-          {PRICING_TIERS.map((tier) => {
-            const billingPrice = getBillingPrice(tier, period);
-            const perLesson = getPerLessonPrice(billingPrice, period);
-            const stripeUrl = getStripeUrl(tier, period);
+          {offers.map((offer) => {
+            const benefits = [
+              ...PRICING_BENEFITS,
+              offer.id === "mtm"
+                ? siteCopy.pricing.cancelAnytime
+                : siteCopy.pricing.cancelPrepaid,
+            ];
 
             return (
               <div
-                key={tier.length}
+                key={offer.id}
                 className={`relative flex flex-col rounded-2xl border bg-surface p-8 shadow-sm ${
-                  tier.popular
+                  offer.bestValue
                     ? "border-accent ring-2 ring-accent/20"
                     : "border-border"
                 }`}
               >
-                {tier.popular && (
+                {offer.bestValue && (
                   <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-accent px-4 py-1 text-xs font-semibold text-white">
-                    {siteCopy.pricing.popularBadge}
+                    {siteCopy.pricing.bestValueBadge}
                   </span>
                 )}
 
-                <h3 className="text-xl font-bold">{tier.label}</h3>
-                <p className="mt-1 text-sm text-muted">Weekly lesson</p>
+                <h3 className="text-xl font-bold">{offer.label}</h3>
+                <p className="mt-1 text-sm text-muted">
+                  Weekly {length}-minute lesson
+                </p>
+
+                {offer.savePercent > 0 && (
+                  <p className="mt-3">
+                    <span className="rounded-full bg-accent-subtle px-3 py-1 text-xs font-semibold text-accent">
+                      {siteCopy.pricing.saveBadge} {offer.savePercent}%
+                    </span>
+                  </p>
+                )}
 
                 <div className="mt-6">
-                  <p className="text-sm font-medium text-muted">
-                    {siteCopy.pricing.asLowAs}
+                  <p className="text-4xl font-bold text-accent">
+                    {formatCurrency(offer.monthlyEquivalent)}
+                    <span className="text-lg font-semibold">/mo</span>
                   </p>
-                  <p className="mt-1 text-4xl font-bold text-accent">
-                    {formatCurrency(perLesson)}
+                  <p className="mt-1 text-sm text-muted">
+                    {billingFinePrint(offer.id, offer.billingTotal)}
                   </p>
-                  <p className="text-sm text-muted">
-                    {siteCopy.pricing.perLessonLabel}
-                  </p>
-                </div>
-
-                <div className="mt-4 border-t border-border pt-4">
-                  {period === "monthly" ? (
-                    <p className="text-lg font-semibold">
-                      {formatCurrency(tier.monthlyPrice)}
-                      <span className="text-sm font-normal text-muted">/mo</span>
-                    </p>
-                  ) : (
-                    <>
-                      <p className="text-lg font-semibold">
-                        {formatCurrency(tier.yearlyPrice)}
-                        <span className="text-sm font-normal text-muted">/yr</span>
-                      </p>
-                      <p className="mt-1 text-sm text-muted">
-                        {formatCurrency(getEffectiveMonthly(tier.yearlyPrice))}/mo
-                        billed annually
-                      </p>
-                    </>
-                  )}
                 </div>
 
                 <ul className="mt-6 flex-1 space-y-3">
-                  {PRICING_BENEFITS.map((benefit) => (
-                    <li key={benefit} className="flex gap-2 text-sm text-muted">
+                  {benefits.map((benefit) => (
+                    <li
+                      key={benefit}
+                      className="flex items-start gap-2 text-sm text-muted"
+                    >
                       <span className="shrink-0 text-accent">✓</span>
                       {benefit}
                     </li>
@@ -130,7 +123,7 @@ export function PricingSection() {
                 </ul>
 
                 <a
-                  href={stripeUrl}
+                  href={offer.stripeUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="mt-8 block rounded-full bg-accent py-3 text-center text-sm font-semibold text-white transition-colors hover:bg-accent-hover"

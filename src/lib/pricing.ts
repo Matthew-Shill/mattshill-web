@@ -1,76 +1,127 @@
-export type BillingPeriod = "monthly" | "yearly";
+export type LessonLength = 30 | 45 | 60;
+export type CommitmentId = "mtm" | "sixMonth" | "annual";
 
 export interface PricingTier {
-  length: 30 | 45 | 60;
+  length: LessonLength;
   label: string;
   monthlyPrice: number;
   yearlyPrice: number;
-  stripeMonthlyUrl: string;
-  stripeYearlyUrl: string;
-  popular?: boolean;
 }
 
-const WEEKS_PER_MONTH = 4.33;
-const LESSONS_PER_YEAR = 52;
+export interface CommitmentPlan {
+  id: CommitmentId;
+  label: string;
+  months: 1 | 6 | 12;
+  bestValue?: boolean;
+}
+
+export interface PricingOffer {
+  monthlyEquivalent: number;
+  stripeUrl: string;
+}
+
+export const LESSON_LENGTHS: LessonLength[] = [30, 45, 60];
+
+export const COMMITMENT_PLANS: CommitmentPlan[] = [
+  { id: "mtm", label: "Month-to-Month", months: 1 },
+  { id: "sixMonth", label: "6-Month", months: 6 },
+  { id: "annual", label: "Annual", months: 12, bestValue: true },
+];
+
+export const PRICING: Record<
+  LessonLength,
+  Record<CommitmentId, PricingOffer>
+> = {
+  30: {
+    mtm: {
+      monthlyEquivalent: 229,
+      stripeUrl: "https://buy.stripe.com/5kQ28qdOc12Lg4G9tv5kk0q",
+    },
+    sixMonth: {
+      monthlyEquivalent: 199,
+      stripeUrl: "https://buy.stripe.com/7sY28qfWk5j1g4G7ln5kk0r",
+    },
+    annual: {
+      monthlyEquivalent: 179,
+      stripeUrl: "https://buy.stripe.com/5kQaEW39y5j1f0C8pr5kk0s",
+    },
+  },
+  45: {
+    mtm: {
+      monthlyEquivalent: 339,
+      stripeUrl: "https://buy.stripe.com/8x27sK8tS9zh2dQbBD5kk0t",
+    },
+    sixMonth: {
+      monthlyEquivalent: 299,
+      stripeUrl: "https://buy.stripe.com/bJe5kCfWkh1J4lYaxz5kk0u",
+    },
+    annual: {
+      monthlyEquivalent: 269,
+      stripeUrl: "https://buy.stripe.com/28E6oGfWkcLtf0CeNP5kk0v",
+    },
+  },
+  60: {
+    mtm: {
+      monthlyEquivalent: 449,
+      stripeUrl: "https://buy.stripe.com/8x24gy5hG8vd6u66hj5kk0w",
+    },
+    sixMonth: {
+      monthlyEquivalent: 399,
+      stripeUrl: "https://buy.stripe.com/dRm3cu25ucLt4lYeNP5kk0x",
+    },
+    annual: {
+      monthlyEquivalent: 359,
+      stripeUrl: "https://buy.stripe.com/eVq8wOcK812L4lY3575kk0y",
+    },
+  },
+};
 
 export function formatCurrency(amount: number): string {
   return new Intl.NumberFormat("en-US", {
     style: "currency",
     currency: "USD",
-    minimumFractionDigits: 2,
-    maximumFractionDigits: 2,
+    minimumFractionDigits: 0,
+    maximumFractionDigits: 0,
   }).format(amount);
 }
 
-export function getPerLessonPrice(
-  totalPrice: number,
-  period: BillingPeriod,
+export function getBillingTotal(
+  monthlyEquivalent: number,
+  months: number,
 ): number {
-  if (period === "monthly") {
-    return totalPrice / WEEKS_PER_MONTH;
-  }
-  return totalPrice / LESSONS_PER_YEAR;
+  return monthlyEquivalent * months;
 }
 
-export function getEffectiveMonthly(yearlyPrice: number): number {
-  return yearlyPrice / 12;
+export function getSavePercent(
+  mtmMonthly: number,
+  monthlyEquivalent: number,
+): number {
+  if (monthlyEquivalent >= mtmMonthly) return 0;
+  return Math.round(((mtmMonthly - monthlyEquivalent) / mtmMonthly) * 100);
 }
 
-export function getBillingPrice(tier: PricingTier, period: BillingPeriod): number {
-  return period === "monthly" ? tier.monthlyPrice : tier.yearlyPrice;
+export function getOffersForLength(length: LessonLength) {
+  const lengthPricing = PRICING[length];
+  const mtmMonthly = lengthPricing.mtm.monthlyEquivalent;
+
+  return COMMITMENT_PLANS.map((plan) => {
+    const offer = lengthPricing[plan.id];
+    return {
+      ...plan,
+      ...offer,
+      billingTotal: getBillingTotal(offer.monthlyEquivalent, plan.months),
+      savePercent: getSavePercent(mtmMonthly, offer.monthlyEquivalent),
+    };
+  });
 }
 
-export function getStripeUrl(tier: PricingTier, period: BillingPeriod): string {
-  return period === "monthly" ? tier.stripeMonthlyUrl : tier.stripeYearlyUrl;
-}
-
-export const PRICING_TIERS: PricingTier[] = [
-  {
-    length: 30,
-    label: "30 Min",
-    monthlyPrice: 199.99,
-    yearlyPrice: 2159.89,
-    stripeMonthlyUrl: "https://buy.stripe.com/aFa6oA8103V7eKHdeGdZ600",
-    stripeYearlyUrl: "https://buy.stripe.com/14A9AM8102R36eb6QidZ601",
-  },
-  {
-    length: 45,
-    label: "45 Min",
-    monthlyPrice: 299.99,
-    yearlyPrice: 3239.89,
-    stripeMonthlyUrl: "https://buy.stripe.com/4gMeV6epo4ZbcCzcaCdZ604",
-    stripeYearlyUrl: "https://buy.stripe.com/6oU8wIdlkdvHgSP4IadZ605",
-    popular: true,
-  },
-  {
-    length: 60,
-    label: "60 Min",
-    monthlyPrice: 399.99,
-    yearlyPrice: 4319.89,
-    stripeMonthlyUrl: "https://buy.stripe.com/6oUdR2dlkajvcCza2udZ608",
-    stripeYearlyUrl: "https://buy.stripe.com/14A7sE1CCcrD1XVfmOdZ609",
-  },
-];
+/** Kept for HomeJsonLd offer catalog — monthlyPrice is the MTM rate. */
+export const PRICING_TIERS: PricingTier[] = LESSON_LENGTHS.map((length) => ({
+  length,
+  label: `${length} Min`,
+  monthlyPrice: PRICING[length].mtm.monthlyEquivalent,
+  yearlyPrice: getBillingTotal(PRICING[length].annual.monthlyEquivalent, 12),
+}));
 
 export const BILLING_PORTAL_URL =
   "https://billing.stripe.com/p/login/dRm00i6lKfXFg4G5df5kk00";
@@ -88,5 +139,4 @@ export const PRICING_BENEFITS = [
   "One-on-one lessons every week",
   "Student portal for schedule, assignments, and notes",
   'My "Never Miss a Lesson" guarantee',
-  "Cancel anytime before your next billing cycle",
 ];
