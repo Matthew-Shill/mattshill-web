@@ -11,14 +11,6 @@ export const siteCopy = {
       "Browse online piano, guitar, voice, bass, drums, and songwriting lessons with Matt Shill. One-on-one weekly training with a free trial.",
   },
 
-  musikkii: {
-    name: "Musikkii",
-    url: "https://www.musikkii.com",
-    logoSrc: "/Musikkii Logo.svg",
-    teacherAffiliation: "A Musikkii Teacher",
-    footerNote: "Scheduling, billing, and your student portal",
-  },
-
   hero: {
     headline: "From First Chord to",
     headlineAccent: "Conservatory Auditions.",
@@ -90,10 +82,10 @@ export const siteCopy = {
     eyebrow: "Signature Guarantee",
     title: "Never Miss A Lesson™",
     description:
-      "When a student can't attend live, their teacher records a custom video lesson with updated notes. Progress never stops.",
+      "When a student can't attend live, I record a custom video lesson with updated notes. Progress never stops.",
     bullets: [
-      "Unique to Musikkii — not offered by marketplaces",
-      "Strong retention hook for busy families",
+      "Included with every weekly subscription",
+      "Built for busy families and packed calendars",
       "Every live lesson is recorded too",
     ],
     flowTitle: "Never Miss A Lesson™ flow",
@@ -156,11 +148,11 @@ export const siteCopy = {
       },
       {
         bold: "Practice assignments and progress tracking",
-        text: "between every lesson — synced to your Musikkii portal",
+        text: "between every lesson — in your student portal",
       },
       {
         bold: "Scheduling and lesson management",
-        text: "through Musikkii, the platform I built for my studio",
+        text: "through the studio portal and this site",
       },
       {
         bold: "Technique, theory, ear training,",
@@ -179,14 +171,14 @@ export const siteCopy = {
     subtitle:
       "Weekly one-on-one lessons with flexible monthly or yearly billing.",
     whySubscription:
-      "Weekly lessons build real skill — I know your progress, your strengths, and what to work on next. Every Musikkii subscription includes structured planning, progress tracking, and my Never Miss a Lesson guarantee.",
+      "Weekly lessons build real skill — I know your progress, your strengths, and what to work on next. Every subscription includes structured planning, progress tracking, and my Never Miss a Lesson guarantee.",
     yearlyBadge: "Save 10%",
     perLessonLabel: "per lesson",
     asLowAs: "As low as",
     subscribe: "Subscribe",
     popularBadge: "Most Popular",
     afterSubscribe:
-      "After subscribing through Musikkii, choose your weekly lesson time to complete setup.",
+      "After subscribing, choose your weekly lesson time to complete setup.",
     scheduleLink: "Choose your weekly lesson time",
   },
 
@@ -198,7 +190,7 @@ export const siteCopy = {
       "I've spent over 15 years teaching students of every age and level — from someone picking up a guitar for the first time to performers preparing for conservatory auditions. My job is to meet you where you are and help you get where you want to go.",
       "I hold dual degrees in Piano and Guitar Performance from the Frost School of Music at the University of Miami, with early training at the Eastman School of Music. I teach piano, guitar, voice, bass, and drums — blending formal technique with creativity, confidence, and real-world musicianship.",
       "My students have been accepted to Juilliard, Berklee, Manhattan School of Music, and more. I've also worked with younger students on original songwriting, advanced sight reading, and professional-grade recordings — sometimes before they've finished high school.",
-      "Outside the studio, I'm a songwriter, recording engineer, and performer with over a million streams on my debut album. I'm also building Musikkii — the platform my students use for subscriptions and scheduling — because lesson management should feel as personal as the lessons themselves.",
+      "Outside the studio, I'm a songwriter, recording engineer, and performer with over a million streams on my debut album.",
     ],
   },
 
@@ -229,12 +221,7 @@ export const siteCopy = {
       {
         question: "How does billing work?",
         answer:
-          "Choose a weekly lesson length and subscribe monthly or yearly through Musikkii (save 10% with annual billing). After subscribing, you'll pick your weekly lesson time. Cancel anytime before your next billing cycle.",
-      },
-      {
-        question: "What is Musikkii?",
-        answer:
-          "Musikkii is the platform I built to run my studio — subscriptions, scheduling, and your student portal. You'll hear from me through Musikkii for scheduling and account updates. The portal is transitioning from My Music Staff to the Musikkii app over time, and I'll let you know when yours is ready.",
+          "Choose a weekly lesson length and subscribe monthly or yearly through Stripe (save 10% with annual billing). After subscribing, you'll pick your weekly lesson time. Cancel anytime before your next billing cycle.",
       },
       {
         question: "Do parents sit in on kids' lessons?",
@@ -246,14 +233,14 @@ export const siteCopy = {
 
   contact: {
     title: "Get in touch",
-    email: "mattshill@musikkii.com",
+    email: "contact@mattshill.com",
     phone: undefined as string | undefined,
     emailLabel: "Email Me",
     phoneLabel: "Call Me",
     trialLabel: "Free Trial",
     scheduleLabel: "Schedule a Time",
     responseTime:
-      "I reply to every message within 24 hours. Scheduling and account updates come from Musikkii.",
+      "I reply to every message within 24 hours.",
     trustSignals: [
       "15+ years of teaching experience",
       "Never Miss a Lesson guarantee",
@@ -315,13 +302,13 @@ export const siteCopy = {
     title: "Choose your weekly lesson time",
     metaTitle: "Schedule Online Music Lessons | Matt Shill Music",
     description:
-      "Schedule your weekly online music lesson time with Matt Shill through Musikkii. Pick length, time zone, and preferred slot — usually confirmed within one business day.",
+      "Schedule your weekly online music lesson time with Matt Shill. Pick length, time zone, and preferred slot — usually confirmed within one business day.",
     seoBody:
-      "After you subscribe, use this page to choose the weekly slot that fits your life. All confirmed online music lessons are one-on-one, and your schedule lives in Musikkii alongside assignments and notes.",
+      "After you subscribe, use this page to choose the weekly slot that fits your life. All confirmed online music lessons are one-on-one, and your schedule lives in the student portal alongside assignments and notes.",
     highlights: [
-      "Subscribe through Musikkii first, then choose your weekly time here",
+      "Subscribe first, then choose your weekly time here",
       "All times shown in your selected time zone",
-      "Confirmations come from Musikkii on my behalf",
+      "I'll confirm your time, usually within one business day",
       "Need to change your time later? Just reach out",
     ],
   },
@@ -332,7 +319,7 @@ export const siteCopy = {
     description:
       "Log in to your Matt Shill Music student portal for schedule, assignments, recordings, and progress between online music lessons.",
     seoBody:
-      "Current students use the portal between lessons for schedule changes, practice assignments, lesson notes, and recordings. Powered by Musikkii as we transition from My Music Staff.",
+      "Current students use the portal between lessons for schedule changes, practice assignments, lesson notes, and recordings.",
     highlights: [
       "Upcoming lesson schedule and calendar",
       "Practice assignments and lesson notes",

@@ -72,7 +72,7 @@ export const LESSON_PAGES: Record<LessonSlug, LessonPage> = {
       "Clean technique and confident rhythm",
       "Songs, solos, and styles you want to play",
       "Theory and ear training tied to the fretboard",
-      "Structured weekly plan via the Musikkii portal",
+      "Structured weekly plan via the student portal",
     ],
     faq: [
       {

@@ -12,5 +12,4 @@ export const SITE_KEYWORDS = [
   "music teacher online",
   "conservatory audition prep",
   "Matt Shill Music",
-  "Musikkii",
 ] as const;

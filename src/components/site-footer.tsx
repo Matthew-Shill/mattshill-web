@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { MusikkiiAffiliation } from "@/components/musikkii-affiliation";
 import { LESSON_PAGES, LESSON_SLUGS } from "@/content/lessons";
 import { siteCopy } from "@/content/site-copy";
 
@@ -13,9 +12,6 @@ export function SiteFooter() {
             <p className="mt-1 max-w-sm text-sm text-white/70">
               {siteCopy.tagline}
             </p>
-            <div className="mt-8">
-              <MusikkiiAffiliation variant="footer" showFooterNote />
-            </div>
           </div>
           <div className="grid gap-8 sm:grid-cols-2">
             <div>

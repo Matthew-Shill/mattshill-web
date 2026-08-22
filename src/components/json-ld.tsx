@@ -96,7 +96,6 @@ export function HomeJsonLd() {
         url: `${SITE_URL}/#pricing`,
       })),
     },
-    sameAs: [siteCopy.musikkii.url],
   };
 
   const websiteJsonLd = {

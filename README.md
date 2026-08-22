@@ -1,6 +1,6 @@
 # Matt Shill Music Website
 
-Marketing site for [Matt Shill Music](https://www.mattshill.com) — online music lessons with subscription billing via Stripe, student management via My Music Staff, and lesson scheduling via Musikkii.
+Personal teaching site for [Matt Shill Music](https://www.mattshill.com) — online music lessons with subscription billing via Stripe and student management via My Music Staff.
 
 ## Tech stack
 
@@ -32,7 +32,7 @@ npm start
 | `/` | Homepage — hero, what/who, how, pricing, about, contact |
 | `/free-trial` | My Music Staff free trial signup widget |
 | `/portal` | My Music Staff student portal widget |
-| `/schedule` | Musikkii availability iframe for weekly lesson time requests |
+| `/schedule` | Availability iframe for weekly lesson time requests |
 
 ## Configuration
 
@@ -73,4 +73,4 @@ After deploying to Vercel:
 - **Stripe Payment Links** — subscription checkout (monthly/yearly)
 - **Stripe Billing Portal** — linked from nav
 - **My Music Staff** — student portal and free trial widgets
-- **Musikkii Availability** — embedded iframe at `/schedule`
+- **Scheduling** — embedded availability iframe at `/schedule`

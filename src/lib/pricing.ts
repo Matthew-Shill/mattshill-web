@@ -86,7 +86,7 @@ export const SCHEDULE_URL = "https://musikkii-availability.vercel.app/";
 
 export const PRICING_BENEFITS = [
   "One-on-one lessons every week",
-  "Musikkii student portal for schedule, assignments, and notes",
+  "Student portal for schedule, assignments, and notes",
   'My "Never Miss a Lesson" guarantee',
   "Cancel anytime before your next billing cycle",
 ];

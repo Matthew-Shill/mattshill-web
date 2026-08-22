@@ -29,8 +29,8 @@ export const privacyPolicy: LegalDocument = {
     {
       heading: "Who we are",
       paragraphs: [
-        "Matt Shill Music is an online music studio offering one-on-one lessons in piano, guitar, voice, bass, drums, songwriting, and related musicianship. Scheduling, subscriptions, and the student portal are provided through Musikkii and, during a transition period, My Music Staff.",
-        "Questions about this policy or your information: [mattshill@musikkii.com](mailto:mattshill@musikkii.com).",
+        "Matt Shill Music is my personal online teaching studio, offering one-on-one lessons in piano, guitar, voice, bass, drums, songwriting, and related musicianship. Billing is handled through Stripe. Scheduling and the student portal use tools on this site, including My Music Staff widgets.",
+        "Questions about this policy or your information: [contact@mattshill.com](mailto:contact@mattshill.com).",
       ],
     },
     {
@@ -52,7 +52,7 @@ export const privacyPolicy: LegalDocument = {
       paragraphs: ["We use the information we collect to:"],
       bullets: [
         "Schedule, deliver, and manage online lessons, including free trials.",
-        "Process subscriptions, invoices, and cancellations through Stripe and Musikkii.",
+        "Process subscriptions, invoices, and cancellations through Stripe.",
         "Send lesson confirmations, schedule changes, billing notices, and replies to your messages.",
         "Create lesson notes, assignments, and progress records in the student portal.",
         "Record lessons for instruction, review, and the Never Miss a Lesson™ guarantee — not for advertising.",
@@ -67,8 +67,8 @@ export const privacyPolicy: LegalDocument = {
       ],
       bullets: [
         "Stripe, for checkout, recurring billing, and the billing portal.",
-        "Musikkii, for subscriptions, scheduling, account updates, and the student portal.",
-        "My Music Staff, for current trial booking and portal widgets while we transition to Musikkii.",
+        "My Music Staff, for trial booking and the student portal.",
+        "The scheduling tool embedded on this site for choosing a weekly lesson time.",
         "The video meeting service used for live lessons.",
         "Hosting and infrastructure providers that keep the website online.",
         "Professional advisors or authorities when required by law or to protect the studio, students, or others.",
@@ -79,7 +79,7 @@ export const privacyPolicy: LegalDocument = {
       paragraphs: [
         "We teach children and teens. A parent or guardian must create and manage the account for any student under 13, and should supervise accounts for older minors as appropriate.",
         "We collect only what we need to provide lessons to that student. We do not use children’s information for marketing unrelated to the studio, and we do not sell it.",
-        "A parent or guardian may request access to, correction of, or deletion of a child’s information by emailing [mattshill@musikkii.com](mailto:mattshill@musikkii.com).",
+        "A parent or guardian may request access to, correction of, or deletion of a child’s information by emailing [contact@mattshill.com](mailto:contact@mattshill.com).",
       ],
     },
     {
@@ -100,7 +100,7 @@ export const privacyPolicy: LegalDocument = {
       heading: "How long we keep information",
       paragraphs: [
         "We keep student, billing, and lesson records for as long as you have an active account and for a reasonable period afterward — for example, to complete a billing cycle, handle a question, or meet recordkeeping obligations. Recordings and portal notes are retained for instructional and studio-administration purposes unless you ask us to delete them and we are not required to keep them.",
-        "You can request deletion at [mattshill@musikkii.com](mailto:mattshill@musikkii.com). We may retain limited information when the law requires it or when we need it to resolve a dispute.",
+        "You can request deletion at [contact@mattshill.com](mailto:contact@mattshill.com). We may retain limited information when the law requires it or when we need it to resolve a dispute.",
       ],
     },
     {
@@ -108,7 +108,7 @@ export const privacyPolicy: LegalDocument = {
       paragraphs: [
         "You can update contact or scheduling details through the portal, by email, or through the Stripe billing portal for payment methods and invoices.",
         "Depending on where you live, you may have the right to request access to, correction of, or deletion of your personal information, to ask for a copy of it, or to appeal our response. We will not discriminate against you for exercising those rights.",
-        "To make a request, email [mattshill@musikkii.com](mailto:mattshill@musikkii.com). We may need to verify that you are the account holder or the parent or guardian on the account.",
+        "To make a request, email [contact@mattshill.com](mailto:contact@mattshill.com). We may need to verify that you are the account holder or the parent or guardian on the account.",
       ],
     },
     {
@@ -133,7 +133,7 @@ export const privacyPolicy: LegalDocument = {
       heading: "Contact",
       paragraphs: [
         "Matt Shill Music",
-        "Email: [mattshill@musikkii.com](mailto:mattshill@musikkii.com)",
+        "Email: [contact@mattshill.com](mailto:contact@mattshill.com)",
         "Website: [www.mattshill.com](https://www.mattshill.com)",
       ],
     },
@@ -153,8 +153,8 @@ export const termsOfService: LegalDocument = {
     {
       heading: "The studio",
       paragraphs: [
-        "Matt Shill Music provides one-on-one online music lessons and related studio tools: scheduling, a student portal, lesson notes, and the Never Miss a Lesson™ guarantee. Subscriptions, scheduling, and account messages are handled through Musikkii. Some booking and portal features may still run on My Music Staff while we finish that transition.",
-        "If you have questions: [mattshill@musikkii.com](mailto:mattshill@musikkii.com).",
+        "Matt Shill Music provides one-on-one online music lessons and related studio tools: scheduling, a student portal, lesson notes, and the Never Miss a Lesson™ guarantee. Subscriptions are billed through Stripe. Booking and portal features currently run on My Music Staff.",
+        "If you have questions: [contact@mattshill.com](mailto:contact@mattshill.com).",
       ],
     },
     {
@@ -167,14 +167,14 @@ export const termsOfService: LegalDocument = {
     {
       heading: "Free trial",
       paragraphs: [
-        "A free trial is a short, no-commitment online session so we can talk through goals, assess level, and see whether weekly lessons are a good fit. A trial does not create a paid subscription. After the trial, you may subscribe through Musikkii if we both want to continue.",
+        "A free trial is a short, no-commitment online session so we can talk through goals, assess level, and see whether weekly lessons are a good fit. A trial does not create a paid subscription. After the trial, you may subscribe through this site if we both want to continue.",
       ],
     },
     {
       heading: "Subscriptions, billing, and cancellation",
       paragraphs: [
         "Paid lessons are sold as a weekly subscription. You choose a lesson length and pay monthly or yearly through Stripe. Current prices are listed on the website and may change for future billing periods; we will not change the rate of an already-paid period without notice.",
-        "Yearly billing is discounted relative to monthly billing, as shown at checkout. After you subscribe, you choose a weekly lesson time. Confirmations and account updates come from Musikkii.",
+        "Yearly billing is discounted relative to monthly billing, as shown at checkout. After you subscribe, you choose a weekly lesson time. Confirmations and account updates come from me.",
         "You may cancel anytime before your next billing cycle through the Stripe billing portal or by emailing us. Cancellation stops future charges. Unless required by law or we agree otherwise in writing, we do not refund a billing period that has already started, including unused lessons in that period.",
         "Failed payments may pause scheduling until the account is current. We may suspend or end lessons for nonpayment.",
       ],
@@ -218,7 +218,7 @@ export const termsOfService: LegalDocument = {
     {
       heading: "Third-party services",
       paragraphs: [
-        "Checkout, billing, scheduling, and the portal rely on third parties, including Stripe, Musikkii, and My Music Staff. Their sites and widgets have their own terms and privacy policies. We are not responsible for a third-party service we do not control, including an outage that delays checkout or login.",
+        "Checkout, billing, scheduling, and the portal rely on third parties, including Stripe and My Music Staff. Their sites and widgets have their own terms and privacy policies. We are not responsible for a third-party service we do not control, including an outage that delays checkout or login.",
       ],
     },
     {
@@ -257,7 +257,7 @@ export const termsOfService: LegalDocument = {
       paragraphs: [
         "These Terms, together with the [Privacy Policy](/privacy) and the plan you select at checkout, are the entire agreement between you and Matt Shill Music for the website and lessons. They replace any prior informal promises about the same subject.",
         "These Terms are governed by the laws of the United States, without regard to conflict-of-law rules. If a court finds a part of these Terms unenforceable, the rest remains in effect.",
-        "Matt Shill Music — [mattshill@musikkii.com](mailto:mattshill@musikkii.com).",
+        "Matt Shill Music — [contact@mattshill.com](mailto:contact@mattshill.com).",
       ],
     },
   ],
