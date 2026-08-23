@@ -50,14 +50,6 @@ export function SiteFooter() {
                   </Link>
                 </li>
                 <li>
-                  <Link
-                    href="/schedule"
-                    className="text-white/80 hover:text-white"
-                  >
-                    {siteCopy.contact.scheduleLabel}
-                  </Link>
-                </li>
-                <li>
                   <Link href="/portal" className="text-white/80 hover:text-white">
                     {siteCopy.nav.studentPortal}
                   </Link>
