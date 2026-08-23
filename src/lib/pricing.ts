@@ -76,6 +76,30 @@ export const PRICING: Record<
   },
 };
 
+export interface SingleLessonOffer {
+  price: number;
+  stripeUrl: string;
+}
+
+export const SINGLE_LESSON: Record<LessonLength, SingleLessonOffer> = {
+  30: {
+    price: 110,
+    stripeUrl: "https://buy.stripe.com/3cIeVc39ydPx9Gi49b5kk0z",
+  },
+  45: {
+    price: 160,
+    stripeUrl: "https://buy.stripe.com/aFa3cu7pO7r9aKmcFH5kk0A",
+  },
+  60: {
+    price: 200,
+    stripeUrl: "https://buy.stripe.com/dRm8wO11q26Pf0CfRT5kk0B",
+  },
+};
+
+export function getSingleLesson(length: LessonLength): SingleLessonOffer {
+  return SINGLE_LESSON[length];
+}
+
 export function formatCurrency(amount: number): string {
   return new Intl.NumberFormat("en-US", {
     style: "currency",

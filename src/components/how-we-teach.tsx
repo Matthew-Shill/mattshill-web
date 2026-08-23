@@ -1,47 +1,50 @@
 import { siteCopy } from "@/content/site-copy";
 
 export function HowWeTeach() {
+  const { how, nml } = siteCopy;
+
   return (
-    <section id="how" className="bg-surface py-16">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <div className="mb-10 max-w-3xl">
-          <p className="text-sm font-semibold uppercase tracking-widest text-accent">
-            {siteCopy.how.eyebrow}
-          </p>
-          <h2 className="mt-2 text-3xl font-bold sm:text-4xl">
-            {siteCopy.how.title}
+    <section id="how" className="py-8 md:py-12">
+      <div className="mx-auto grid max-w-6xl items-center gap-6 px-4 sm:px-6 lg:grid-cols-2 lg:gap-10">
+        <div>
+          <h2 className="font-display text-3xl font-semibold sm:text-4xl">
+            {how.title}
           </h2>
-          <p className="mt-4 text-lg text-muted">{siteCopy.how.intro}</p>
+          <p className="mt-3 text-muted">{how.intro}</p>
+
+          <ol className="mt-6 space-y-4">
+            {how.lessonArc.map((step, index) => (
+              <li key={step.phase} className="flex gap-3">
+                <span className="mt-0.5 inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-coral text-xs font-bold text-white">
+                  {index + 1}
+                </span>
+                <div>
+                  <p className="font-semibold">{step.phase}</p>
+                  <p className="text-sm text-muted">{step.description}</p>
+                </div>
+              </li>
+            ))}
+          </ol>
         </div>
 
-        <div className="mb-8 grid gap-4 md:grid-cols-3">
-          {siteCopy.how.lessonArc.map((step, index) => (
-            <div
-              key={step.phase}
-              className="relative rounded-xl border border-border bg-background p-6"
-            >
-              <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-accent text-sm font-bold text-white">
-                {index + 1}
-              </span>
-              <h3 className="mt-4 text-lg font-bold">{step.phase}</h3>
-              <p className="mt-2 text-sm text-muted">{step.description}</p>
-            </div>
-          ))}
+        <div
+          id="nml"
+          className="overflow-hidden rounded-2xl border border-border bg-surface"
+        >
+          <video
+            className="aspect-video w-full bg-black object-cover"
+            controls
+            preload="metadata"
+            playsInline
+            title={nml.sampleVideoLabel}
+            aria-label={nml.sampleVideoLabel}
+          >
+            <source src={nml.sampleVideo} type="video/mp4" />
+          </video>
+          <p className="px-4 py-3 text-sm font-medium text-muted">
+            {nml.sampleVideoLabel}
+          </p>
         </div>
-
-        <ul className="grid gap-4 sm:grid-cols-2">
-          {siteCopy.how.bullets.map((bullet) => (
-            <li
-              key={bullet.bold}
-              className="flex gap-3 rounded-xl border border-border bg-background p-5"
-            >
-              <span className="mt-1 shrink-0 text-accent">✓</span>
-              <span>
-                <strong>{bullet.bold}</strong> {bullet.text}
-              </span>
-            </li>
-          ))}
-        </ul>
       </div>
     </section>
   );

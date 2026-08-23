@@ -1,10 +1,10 @@
 import { HomeJsonLd } from "@/components/json-ld";
 import { About } from "@/components/about";
 import { Contact } from "@/components/contact";
+import { Credibility } from "@/components/credibility";
 import { Faq } from "@/components/faq";
 import { Hero } from "@/components/hero";
 import { HowWeTeach } from "@/components/how-we-teach";
-import { NmlSection } from "@/components/nml-section";
 import { PricingSection } from "@/components/pricing-section";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
@@ -21,7 +21,7 @@ export default function Home() {
         <Testimonials />
         <WhoItsFor />
         <HowWeTeach />
-        <NmlSection />
+        <Credibility />
         <PricingSection />
         <About />
         <Faq />

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { siteCopy } from "@/content/site-copy";
+import { SignatureDivider } from "@/components/signature-stroke";
 
 const INSTRUMENT_HREF: Record<string, string> = {
   Piano: "/lessons/piano",
@@ -30,29 +31,26 @@ function InstrumentChip({ label }: { label: string }) {
 
 export function WhoItsFor() {
   return (
-    <section id="who" className="py-16">
+    <section id="who" className="py-8 md:py-12">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <div className="mb-10 max-w-3xl">
+        <div className="mb-4 max-w-3xl md:mb-6">
           <p className="text-sm font-semibold uppercase tracking-widest text-accent">
             {siteCopy.whoItsFor.eyebrow}
           </p>
-          <h2 className="mt-2 text-3xl font-bold sm:text-4xl">
+          <h2 className="mt-2 font-display text-3xl font-semibold sm:text-4xl">
             {siteCopy.whoItsFor.title}
           </h2>
-          <p className="mt-4 text-lg text-muted">
-            {siteCopy.whoItsFor.subtitle}
-          </p>
         </div>
 
-        <div className="grid gap-5 sm:grid-cols-2">
+        <div className="grid grid-cols-2 gap-3 xl:grid-cols-4">
           {siteCopy.whoItsFor.paths.map((path) => (
             <div
               key={path.title}
-              className="rounded-2xl border border-border bg-surface p-7"
+              className="rounded-2xl border border-border bg-surface p-4 sm:p-5"
             >
-              <h3 className="text-xl font-bold">{path.title}</h3>
-              <p className="mt-3 text-muted">{path.description}</p>
-              <div className="mt-5 flex flex-wrap gap-2">
+              <h3 className="text-base font-bold sm:text-lg">{path.title}</h3>
+              <p className="mt-2 text-sm text-muted">{path.description}</p>
+              <div className="mt-3 flex flex-wrap gap-2">
                 {path.instruments.map((instrument) => (
                   <InstrumentChip key={instrument} label={instrument} />
                 ))}
@@ -61,7 +59,7 @@ export function WhoItsFor() {
           ))}
         </div>
 
-        <p className="mt-8 text-center text-sm text-muted">
+        <p className="mt-5 text-center text-sm text-muted">
           <Link
             href="/lessons"
             className="font-semibold text-accent hover:underline"
@@ -70,6 +68,7 @@ export function WhoItsFor() {
           </Link>
         </p>
       </div>
+      <SignatureDivider className="mt-8 md:mt-10" />
     </section>
   );
 }

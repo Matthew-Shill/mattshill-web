@@ -17,35 +17,36 @@ function Stars() {
   );
 }
 
+const featuredReviews = siteCopy.testimonials.items.filter(
+  (item) => "featured" in item && item.featured,
+);
+
 export function Testimonials() {
   const { testimonials } = siteCopy;
 
   return (
-    <section id="reviews" className="bg-accent-subtle py-16">
+    <section id="reviews" className="py-8 md:py-12">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <div className="mb-10 text-center">
+        <div className="mb-4 text-center md:mb-6">
           <p className="text-sm font-semibold uppercase tracking-widest text-accent">
             {testimonials.eyebrow}
           </p>
-          <h2 className="mt-2 text-3xl font-bold sm:text-4xl">
+          <h2 className="mt-2 font-display text-3xl font-semibold sm:text-4xl">
             {testimonials.title}
           </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-lg text-muted">
-            {testimonials.subtitle}
-          </p>
         </div>
 
-        <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-          {testimonials.items.map((item) => (
+        <div className="grid gap-3 md:grid-cols-3 md:gap-4">
+          {featuredReviews.map((item) => (
             <figure
               key={item.name}
-              className="flex flex-col rounded-2xl border border-border bg-surface p-6"
+              className="rounded-2xl border border-border bg-surface p-4 sm:p-5"
             >
               <Stars />
-              <blockquote className="mt-4 flex-1 text-sm leading-relaxed text-foreground">
+              <blockquote className="mt-3 text-sm leading-relaxed text-foreground">
                 &ldquo;{item.quote}&rdquo;
               </blockquote>
-              <figcaption className="mt-5 text-sm">
+              <figcaption className="mt-4 text-sm">
                 <span className="font-semibold">{item.name}</span>
                 <span className="text-muted">
                   {" "}

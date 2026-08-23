@@ -1,5 +1,5 @@
 import { siteCopy } from "@/content/site-copy";
-import { PRICING_TIERS } from "@/lib/pricing";
+import { LESSON_LENGTHS, PRICING_TIERS, SINGLE_LESSON } from "@/lib/pricing";
 import { SITE_NAME, SITE_URL } from "@/lib/site";
 
 function serializeJsonLd(data: unknown): string {
@@ -104,16 +104,27 @@ export function HomeJsonLd() {
     })),
     offerCatalog: {
       "@type": "OfferCatalog",
-      name: "Weekly music lesson subscriptions",
-      itemListElement: PRICING_TIERS.map((tier) => ({
-        "@type": "Offer",
-        name: `${tier.label} weekly lesson`,
-        description: `Weekly one-on-one ${tier.length}-minute online music lesson`,
-        price: tier.monthlyPrice.toFixed(2),
-        priceCurrency: "USD",
-        availability: "https://schema.org/InStock",
-        url: `${SITE_URL}/#pricing`,
-      })),
+      name: "Music lesson subscriptions and single lessons",
+      itemListElement: [
+        ...PRICING_TIERS.map((tier) => ({
+          "@type": "Offer",
+          name: `${tier.label} weekly lesson`,
+          description: `Weekly one-on-one ${tier.length}-minute online music lesson`,
+          price: tier.monthlyPrice.toFixed(2),
+          priceCurrency: "USD",
+          availability: "https://schema.org/InStock",
+          url: `${SITE_URL}/#pricing`,
+        })),
+        ...LESSON_LENGTHS.map((length) => ({
+          "@type": "Offer",
+          name: `${length} Min single lesson`,
+          description: `One-time ${length}-minute online music lesson`,
+          price: SINGLE_LESSON[length].price.toFixed(2),
+          priceCurrency: "USD",
+          availability: "https://schema.org/InStock",
+          url: `${SITE_URL}/#pricing`,
+        })),
+      ],
     },
   };
 

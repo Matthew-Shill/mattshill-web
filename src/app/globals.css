@@ -1,15 +1,17 @@
 @import "tailwindcss";
 
 :root {
-  --background: #f8f9fc;
-  --foreground: #141820;
-  --muted: #5c6472;
+  --background: #fff8f3;
+  --foreground: #2d2a26;
+  --muted: #94a3b8;
   --accent: #0331bd;
-  --accent-hover: #022a9e;
-  --accent-subtle: #eef2fc;
+  --accent-hover: #0228a0;
+  --accent-subtle: #e8eefc;
   --accent-light: #93b4ff;
+  --coral: #ff6b5b;
+  --coral-hover: #e85a4b;
   --surface: #ffffff;
-  --border: #e2e8f0;
+  --border: #e8dfd6;
 }
 
 @theme inline {
@@ -20,9 +22,12 @@
   --color-accent-hover: var(--accent-hover);
   --color-accent-subtle: var(--accent-subtle);
   --color-accent-light: var(--accent-light);
+  --color-coral: var(--coral);
+  --color-coral-hover: var(--coral-hover);
   --color-surface: var(--surface);
   --color-border: var(--border);
   --font-sans: var(--font-inter);
+  --font-display: var(--font-fraunces);
 }
 
 html {
@@ -33,4 +38,9 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-inter), system-ui, sans-serif;
+}
+
+h1,
+h2 {
+  font-family: var(--font-fraunces), "Iowan Old Style", Palatino, serif;
 }
