@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { LessonJsonLd } from "@/components/json-ld";
 import { SiteFooter } from "@/components/site-footer";
-import { SiteHeader } from "@/components/site-header";
 import { LESSON_PAGES, LESSON_SLUGS, type LessonSlug } from "@/content/lessons";
 import { siteCopy } from "@/content/site-copy";
 import { SITE_URL } from "@/lib/site";
@@ -57,7 +56,6 @@ export default async function LessonInstrumentPage({ params }: Props) {
         url={pageUrl}
         faq={lesson.faq}
       />
-      <SiteHeader />
       <main className="flex-1">
         <section className="bg-accent text-white">
           <div className="mx-auto max-w-3xl px-4 py-16 sm:px-6 lg:py-20">

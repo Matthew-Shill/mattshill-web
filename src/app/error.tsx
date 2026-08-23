@@ -3,7 +3,6 @@
 import { useEffect } from "react";
 import { ErrorScreen } from "@/components/error-screen";
 import { SiteFooter } from "@/components/site-footer";
-import { SiteHeader } from "@/components/site-header";
 import { siteCopy } from "@/content/site-copy";
 
 type ErrorPageProps = {
@@ -24,7 +23,6 @@ export default function ErrorPage({
 
   return (
     <>
-      <SiteHeader />
       <ErrorScreen
         variant="error"
         code={copy.code}

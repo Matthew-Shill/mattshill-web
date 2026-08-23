@@ -1,5 +1,4 @@
 import { SiteFooter } from "@/components/site-footer";
-import { SiteHeader } from "@/components/site-header";
 import Link from "next/link";
 import { LESSON_PAGES, LESSON_SLUGS } from "@/content/lessons";
 
@@ -20,7 +19,6 @@ export function WidgetPageLayout({
 }: WidgetPageLayoutProps) {
   return (
     <>
-      <SiteHeader />
       <main className="flex-1">
         <div className="mx-auto max-w-4xl px-4 py-12 sm:px-6">
           <h1 className="text-3xl font-bold sm:text-4xl">{title}</h1>

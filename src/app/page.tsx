@@ -7,7 +7,6 @@ import { Hero } from "@/components/hero";
 import { HowWeTeach } from "@/components/how-we-teach";
 import { PricingSection } from "@/components/pricing-section";
 import { SiteFooter } from "@/components/site-footer";
-import { SiteHeader } from "@/components/site-header";
 import { Testimonials } from "@/components/testimonials";
 import { WhoItsFor } from "@/components/who-its-for";
 
@@ -15,7 +14,6 @@ export default function Home() {
   return (
     <>
       <HomeJsonLd />
-      <SiteHeader />
       <main className="flex-1">
         <Hero />
         <Testimonials />

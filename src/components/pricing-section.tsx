@@ -12,6 +12,7 @@ import {
   getOffersForLength,
   getSingleLesson,
 } from "@/lib/pricing";
+import { withPromoCode } from "@/lib/promo";
 
 function billingFinePrint(
   commitmentId: "mtm" | "sixMonth" | "annual",
@@ -110,6 +111,16 @@ export function PricingSection() {
                   <p className="text-xs text-muted">
                     {billingFinePrint(offer.id, offer.billingTotal)}
                   </p>
+                  {(offer.id === "sixMonth" || offer.id === "annual") && (
+                    <p className="mt-1 text-xs font-medium text-coral">
+                      {siteCopy.pricing.welcomeBadge}
+                    </p>
+                  )}
+                  {offer.id === "mtm" && (
+                    <p className="mt-1 text-xs text-muted">
+                      {siteCopy.pricing.welcomeQuiet}
+                    </p>
+                  )}
                 </div>
                 <div className="shrink-0 text-right">
                   <p className="text-xl font-bold text-accent">
@@ -122,7 +133,7 @@ export function PricingSection() {
                     </p>
                   )}
                   <a
-                    href={offer.stripeUrl}
+                    href={withPromoCode(offer.stripeUrl)}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="mt-2 inline-block rounded-full bg-accent px-4 py-1.5 text-xs font-semibold text-white transition-colors hover:bg-accent-hover"
@@ -188,6 +199,18 @@ export function PricingSection() {
                     </span>
                   </p>
                 )}
+                {(offer.id === "sixMonth" || offer.id === "annual") && (
+                  <p className={offer.savePercent > 0 ? "mt-2" : "mt-3"}>
+                    <span className="rounded-full border border-coral/40 px-3 py-1 text-xs font-medium text-coral">
+                      {siteCopy.pricing.welcomeBadge}
+                    </span>
+                  </p>
+                )}
+                {offer.id === "mtm" && (
+                  <p className="mt-3 text-xs text-muted">
+                    {siteCopy.pricing.welcomeQuiet}
+                  </p>
+                )}
 
                 <div className="mt-5">
                   <p className="text-4xl font-bold text-accent">
@@ -212,7 +235,7 @@ export function PricingSection() {
                 </ul>
 
                 <a
-                  href={offer.stripeUrl}
+                  href={withPromoCode(offer.stripeUrl)}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="mt-6 block rounded-full bg-accent py-3 text-center text-sm font-semibold text-white transition-colors hover:bg-accent-hover"
@@ -235,13 +258,16 @@ export function PricingSection() {
           {formatCurrency(single.price)}, {siteCopy.pricing.singleLessonFinePrint}{" "}
           —{" "}
           <a
-            href={single.stripeUrl}
+            href={withPromoCode(single.stripeUrl)}
             target="_blank"
             rel="noopener noreferrer"
             className="font-semibold text-white/80 underline-offset-4 hover:text-white hover:underline"
           >
             {siteCopy.pricing.singleLessonCta}
           </a>
+        </p>
+        <p className="mt-2 text-center text-xs text-white/55">
+          {siteCopy.pricing.welcomeQuiet}
         </p>
 
       </div>

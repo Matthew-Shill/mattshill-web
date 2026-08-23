@@ -165,6 +165,21 @@ export const siteCopy = {
     singleLessonPrompt: "Just need one lesson?",
     singleLessonFinePrint: "one-time",
     singleLessonCta: "Buy a lesson",
+    welcomeBadge: "+ Extra 10% off with WELCOME10",
+    welcomeQuiet: "10% off your first invoice with WELCOME10",
+  },
+
+  promo: {
+    bannerDesktop: "New students: 10% off your first plan — code",
+    bannerMobile: "New students: 10% off —",
+    bannerDismiss: "Dismiss welcome offer",
+    popupHeadline: "10% off your first plan",
+    popupSupport: "First-time students only. Applied once at checkout.",
+    popupCta: "Start month-to-month — 30 min",
+    popupFinePrint: "Or pick a longer plan on the pricing page.",
+    popupClose: "Close welcome offer",
+    popupCopyCode: "Copy code",
+    popupCopied: "Copied",
   },
 
   about: {

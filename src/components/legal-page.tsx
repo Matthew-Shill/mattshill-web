@@ -1,7 +1,6 @@
 import type { ReactNode } from "react";
 import Link from "next/link";
 import { SiteFooter } from "@/components/site-footer";
-import { SiteHeader } from "@/components/site-header";
 import type { LegalDocument, LegalSection } from "@/content/legal";
 import { siteCopy } from "@/content/site-copy";
 
@@ -76,7 +75,6 @@ function LegalSectionBlock({ section }: { section: LegalSection }) {
 export function LegalPage({ document }: { document: LegalDocument }) {
   return (
     <>
-      <SiteHeader />
       <main className="flex-1">
         <section className="bg-accent text-white">
           <div className="mx-auto max-w-3xl px-4 py-16 sm:px-6 lg:py-20">
