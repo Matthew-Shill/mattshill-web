@@ -25,6 +25,7 @@ export default function PortalPage() {
       <MmsWidget
         id="mms-student-portal-widget"
         src={MMS_WIDGETS.studentPortal}
+        title={siteCopy.portalPage.widgetTitle}
         className="min-h-[500px]"
       />
     </WidgetPageLayout>

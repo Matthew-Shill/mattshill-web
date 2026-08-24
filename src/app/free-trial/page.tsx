@@ -27,6 +27,7 @@ export default function FreeTrialPage() {
       <MmsWidget
         id="mms-free-trial-widget"
         src={MMS_WIDGETS.freeTrial}
+        title={siteCopy.freeTrialPage.widgetTitle}
         className="min-h-[500px]"
       />
     </WidgetPageLayout>

@@ -157,6 +157,21 @@ export const MMS_WIDGETS = {
     "https://app.mymusicstaff.com/Widget/v4/Widget.ashx?settings=eyJTY2hvb2xJRCI6InNjaF9tN1lKUyIsIldlYnNpdGVJRCI6Indic181UnFKViIsIldlYnNpdGVCbG9ja0lEIjoid2JiX1dsZ2ZKcCJ9",
 };
 
+/** Direct iframe URL used by the official MMS loader script. */
+export function getMmsWidgetIframeSrc(
+  scriptSrc: string,
+  sandboxed = false,
+): string {
+  const scriptUrl = new URL(scriptSrc);
+  const iframeUrl = new URL("https://app.mymusicstaff.com/Website/v3/widget.html");
+  const settings = scriptUrl.searchParams.get("settings");
+  if (settings) {
+    iframeUrl.searchParams.set("settings", settings);
+  }
+  iframeUrl.searchParams.set("sandboxed", String(sandboxed));
+  return iframeUrl.toString();
+}
+
 export const SCHEDULE_URL = "https://musikkii-availability.vercel.app/";
 
 export const PRICING_BENEFITS = [

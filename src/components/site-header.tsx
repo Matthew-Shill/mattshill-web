@@ -113,13 +113,13 @@ function PortalDropdown() {
 export function SiteHeader() {
   return (
     <header className="border-b border-border bg-background/95 backdrop-blur-sm">
-      <div className="mx-auto flex max-w-6xl items-center justify-between gap-6 px-4 py-3 sm:px-6">
-        <Link href="/" className="shrink-0">
+      <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-3 sm:gap-6 sm:px-6">
+        <Link href="/" className="min-w-0 shrink">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src="/logo.png"
             alt={siteCopy.businessName}
-            className="h-10 w-auto sm:h-12"
+            className="h-9 w-auto max-w-[42vw] object-contain object-left sm:h-12 sm:max-w-none"
           />
         </Link>
 
@@ -135,60 +135,69 @@ export function SiteHeader() {
           />
         </nav>
 
-        <div className="hidden shrink-0 items-center gap-4 xl:flex">
-          <PortalDropdown />
+        <div className="flex shrink-0 items-center justify-end gap-2 sm:gap-3">
+          <div className="hidden xl:block">
+            <PortalDropdown />
+          </div>
           <Link
             href="/free-trial"
-            className="whitespace-nowrap rounded-full bg-accent px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-accent-hover"
+            className="whitespace-nowrap rounded-full bg-accent px-3.5 py-2 text-sm font-semibold text-white transition-colors hover:bg-accent-hover"
           >
             {siteCopy.nav.freeTrial}
           </Link>
-        </div>
-
-        <details className="relative xl:hidden">
-          <summary className="cursor-pointer list-none rounded-md border border-border px-3 py-2 text-sm font-medium whitespace-nowrap">
-            Menu
-          </summary>
-          <div className="absolute right-0 mt-2 w-56 rounded-lg border border-border bg-surface p-3 shadow-lg">
-            {siteCopy.nav.sections.map((item) => (
-              <a
-                key={item.href}
-                href={item.href}
-                className="block rounded-md px-3 py-2 text-sm text-muted hover:bg-background hover:text-foreground"
-              >
-                {item.label}
-              </a>
-            ))}
-            <hr className="my-2 border-border" />
-            {portalLinks.map((link) =>
-              link.external ? (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block rounded-md px-3 py-2 text-sm text-muted hover:bg-background hover:text-foreground"
-                >
-                  {link.label}
-                </a>
-              ) : (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className="block rounded-md px-3 py-2 text-sm text-muted hover:bg-background hover:text-foreground"
-                >
-                  {link.label}
-                </Link>
-              ),
-            )}
-            <Link
-              href="/free-trial"
-              className="mt-2 block rounded-md bg-accent px-3 py-2 text-center text-sm font-semibold text-white hover:bg-accent-hover"
+          <details className="relative xl:hidden">
+            <summary
+              className="inline-flex cursor-pointer list-none items-center justify-center rounded-md border border-border p-2 text-foreground [&::-webkit-details-marker]:hidden"
+              aria-label="Open menu"
             >
-              {siteCopy.nav.freeTrial}
-            </Link>
-          </div>
-        </details>
+              <svg
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                className="h-5 w-5"
+                aria-hidden
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M3 5.25A.75.75 0 013.75 4.5h12.5a.75.75 0 010 1.5H3.75A.75.75 0 013 5.25zm0 4.75a.75.75 0 01.75-.75h12.5a.75.75 0 010 1.5H3.75A.75.75 0 013 10zm.75 4a.75.75 0 000 1.5h12.5a.75.75 0 000-1.5H3.75z"
+                  clipRule="evenodd"
+                />
+              </svg>
+            </summary>
+            <div className="absolute right-0 mt-2 w-56 rounded-lg border border-border bg-surface p-3 shadow-lg">
+              {siteCopy.nav.sections.map((item) => (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  className="block rounded-md px-3 py-2 text-sm text-muted hover:bg-background hover:text-foreground"
+                >
+                  {item.label}
+                </a>
+              ))}
+              <hr className="my-2 border-border" />
+              {portalLinks.map((link) =>
+                link.external ? (
+                  <a
+                    key={link.href}
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block rounded-md px-3 py-2 text-sm text-muted hover:bg-background hover:text-foreground"
+                  >
+                    {link.label}
+                  </a>
+                ) : (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className="block rounded-md px-3 py-2 text-sm text-muted hover:bg-background hover:text-foreground"
+                  >
+                    {link.label}
+                  </Link>
+                ),
+              )}
+            </div>
+          </details>
+        </div>
       </div>
     </header>
   );

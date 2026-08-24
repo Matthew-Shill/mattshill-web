@@ -176,6 +176,7 @@ export const siteCopy = {
     popupHeadline: "10% off your first plan",
     popupSupport: "First-time students only. Applied once at checkout.",
     popupCta: "Start month-to-month — 30 min",
+    popupTrial: "Prefer to book a free trial first?",
     popupFinePrint: "Or pick a longer plan on the pricing page.",
     popupClose: "Close welcome offer",
     popupCopyCode: "Copy code",
@@ -296,6 +297,11 @@ export const siteCopy = {
     ],
   },
 
+  mmsWidget: {
+    fallback: "If the form doesn't appear, email me and I'll help you from there.",
+    openNewTab: "Open the form in a new tab",
+  },
+
   freeTrialPage: {
     title: "Book your free trial",
     metaTitle: "Free Trial Online Music Lesson | Matt Shill Music",
@@ -309,6 +315,7 @@ export const siteCopy = {
       "Bring your instrument (or use a keyboard for piano)",
       "Plan for about 30 minutes for the trial session",
     ],
+    widgetTitle: "Free trial booking form",
   },
 
   schedulePage: {
@@ -339,6 +346,7 @@ export const siteCopy = {
       "Recordings and resources from past lessons",
       "Direct messaging with me through the portal",
     ],
+    widgetTitle: "Student portal login",
   },
 
   lessonsIndex: {

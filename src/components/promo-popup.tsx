@@ -171,6 +171,13 @@ export function PromoPopup() {
           {siteCopy.promo.popupCta}
         </a>
         <Link
+          href="/free-trial"
+          onClick={close}
+          className="mt-3 block text-center text-sm font-semibold text-accent hover:text-accent-hover"
+        >
+          {siteCopy.promo.popupTrial}
+        </Link>
+        <Link
           href="/#pricing"
           onClick={close}
           className="mt-3 block text-center text-sm font-semibold text-coral hover:text-coral-hover"
