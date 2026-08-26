@@ -3,7 +3,7 @@ import { readFile } from "node:fs/promises";
 import { join } from "node:path";
 import { siteCopy } from "@/content/site-copy";
 
-export const alt = "Matt Shill Music | Online Music Lessons";
+export const alt = "Matt Shill Music — Online Music Lessons";
 export const size = {
   width: 1200,
   height: 630,

@@ -255,7 +255,8 @@ export function PricingSection() {
 
         <p className="mt-6 text-center text-sm text-white/60">
           {siteCopy.pricing.singleLessonPrompt} {length} min for{" "}
-          {formatCurrency(single.price)}, {siteCopy.pricing.singleLessonFinePrint}.{" "}
+          {formatCurrency(single.price)}, {siteCopy.pricing.singleLessonFinePrint}{" "}
+          —{" "}
           <a
             href={withPromoCode(single.stripeUrl)}
             target="_blank"

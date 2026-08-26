@@ -102,7 +102,7 @@ export default async function DeveloperPage() {
             {developerCopy.languages.map((language) => (
               <li key={language.name}>
                 <span className="text-[#fafafa]">{language.name}</span>
-                <span className="text-[#71717a]">: {language.level}</span>
+                <span className="text-[#71717a]"> — {language.level}</span>
               </li>
             ))}
           </ul>
@@ -171,7 +171,7 @@ export default async function DeveloperPage() {
                   ))}
                   {project.repoPrivate ? (
                     <span className="inline-flex cursor-default items-center rounded-full border border-[#27272a] px-2.5 py-1 text-xs text-[#71717a]">
-                      Private repo, available on request
+                      Private repo — available on request
                     </span>
                   ) : null}
                 </div>

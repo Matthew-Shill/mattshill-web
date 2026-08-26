@@ -3,7 +3,7 @@ import { developerCopy } from "./_content";
 import { getDeveloperHomeHref } from "./_lib/paths";
 
 export const metadata: Metadata = {
-  title: { absolute: "Page not found | Matt Shill" },
+  title: { absolute: "Page not found — Matt Shill" },
   robots: {
     index: false,
     follow: false,
