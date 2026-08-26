@@ -1,15 +1,18 @@
 import Image from "next/image";
 import { Waveform } from "./_components/waveform";
 import { developerCopy } from "./_content";
+import { getDeveloperHomeHref, resolvePortfolioHref } from "./_lib/paths";
 import headshot from "./headshot.webp";
 
-export default function DeveloperPage() {
+export default async function DeveloperPage() {
+  const homeHref = await getDeveloperHomeHref();
+
   return (
     <>
       <header className="sticky top-0 z-10 border-b border-[#27272a] bg-[#09090b]/90 backdrop-blur">
         <div className="mx-auto flex max-w-3xl items-center justify-between gap-4 px-5 py-4 sm:px-6">
           <a
-            href="/developer"
+            href={homeHref}
             className="text-sm font-medium tracking-tight hover:text-[var(--developer-accent)]"
           >
             {developerCopy.name}
@@ -189,7 +192,7 @@ export default function DeveloperPage() {
               <li key={link.label} className="flex flex-wrap gap-x-4 gap-y-1">
                 <span className="w-20 text-sm text-[#71717a]">{link.label}</span>
                 <a
-                  href={link.href}
+                  href={resolvePortfolioHref(homeHref, link.href)}
                   className="text-sm text-[#fafafa] underline decoration-[#3f3f46] underline-offset-4 hover:text-[var(--developer-accent)] hover:decoration-[var(--developer-accent)]"
                 >
                   {link.display}

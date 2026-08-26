@@ -149,7 +149,7 @@ export const developerCopy = {
       },
       {
         label: "Resume",
-        href: "/developer/resume",
+        href: "/resume",
         display: "Download PDF",
       },
     ],
