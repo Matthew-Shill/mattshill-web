@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { ErrorScreen } from "@/components/error-screen";
-import { SiteChrome } from "@/components/site-chrome";
 import { SiteFooter } from "@/components/site-footer";
 import { siteCopy } from "@/content/site-copy";
 
@@ -17,7 +16,7 @@ export const metadata: Metadata = {
 
 export default function NotFound() {
   return (
-    <SiteChrome>
+    <>
       <ErrorScreen
         variant="not-found"
         code={copy.code}
@@ -26,6 +25,6 @@ export default function NotFound() {
         body={copy.body}
       />
       <SiteFooter />
-    </SiteChrome>
+    </>
   );
 }

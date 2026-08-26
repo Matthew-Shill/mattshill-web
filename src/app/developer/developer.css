@@ -1,0 +1,52 @@
+/* Portfolio-only overrides. Music-site globals stay untouched. */
+html:has([data-developer-portfolio]) {
+  --developer-bg: #09090b;
+  --developer-fg: #fafafa;
+  --developer-muted: #a1a1aa;
+  --developer-border: #27272a;
+  --developer-soft: #18181b;
+  --developer-accent: #e0b15a;
+}
+
+body:has([data-developer-portfolio]) {
+  background: var(--developer-bg);
+  color: var(--developer-fg);
+  font-family: var(--font-developer), ui-sans-serif, system-ui, sans-serif;
+}
+
+[data-developer-portfolio] h1,
+[data-developer-portfolio] h2 {
+  font-family: var(--font-developer), ui-sans-serif, system-ui, sans-serif;
+  letter-spacing: -0.03em;
+}
+
+.developer-waveform {
+  display: block;
+  width: 100%;
+  height: 1.75rem;
+  color: var(--developer-accent);
+}
+
+.developer-waveform--draw path {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: developer-waveform-draw 1.35s ease-out forwards;
+}
+
+.developer-waveform--quiet {
+  color: color-mix(in srgb, var(--developer-accent) 45%, transparent);
+  height: 1.25rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .developer-waveform--draw path {
+    animation: none;
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes developer-waveform-draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
