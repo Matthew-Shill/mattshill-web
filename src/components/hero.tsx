@@ -73,7 +73,7 @@ export function Hero() {
         <div className="relative aspect-[16/10] overflow-hidden rounded-2xl border border-white/10 lg:aspect-[4/3]">
           <Image
             src="/weddingpiano.jpg"
-            alt="Matt Shill teaching and performing piano — online music lessons"
+            alt="Matt Shill teaching and performing piano for online music lessons"
             fill
             className="object-cover"
             priority

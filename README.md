@@ -1,6 +1,6 @@
 # Matt Shill Music Website
 
-Personal teaching site for [Matt Shill Music](https://www.mattshill.com) — online music lessons with subscription billing via Stripe and student management via My Music Staff.
+Personal teaching site for [Matt Shill Music](https://www.mattshill.com): online music lessons with subscription billing via Stripe and student management via My Music Staff.
 
 ## Tech stack
 
@@ -29,7 +29,7 @@ npm start
 
 | Route | Purpose |
 |-------|---------|
-| `/` | Homepage — hero, what/who, how, pricing, about, contact |
+| `/` | Homepage: hero, what/who, how, pricing, about, contact |
 | `/free-trial` | My Music Staff free trial signup widget |
 | `/portal` | My Music Staff student portal widget |
 | `/schedule` | Availability iframe for weekly lesson time requests |
@@ -54,11 +54,11 @@ After deploying to Vercel:
 1. In the Vercel project, go to **Settings → Domains** and add `mattshill.com` and `www.mattshill.com`.
 2. At your domain registrar, update DNS:
 
-   **Option A — Vercel nameservers (recommended)**
+   **Option A: Vercel nameservers (recommended)**
 
    Point your domain to Vercel's nameservers shown in the Vercel dashboard.
 
-   **Option B — CNAME**
+   **Option B: CNAME**
 
    | Type | Name | Value |
    |------|------|-------|
@@ -70,7 +70,7 @@ After deploying to Vercel:
 
 ## External integrations
 
-- **Stripe Payment Links** — subscription checkout (monthly/yearly)
-- **Stripe Billing Portal** — linked from nav
-- **My Music Staff** — student portal and free trial widgets
-- **Scheduling** — embedded availability iframe at `/schedule`
+- **Stripe Payment Links:** subscription checkout (monthly/yearly)
+- **Stripe Billing Portal:** linked from nav
+- **My Music Staff:** student portal and free trial widgets
+- **Scheduling:** embedded availability iframe at `/schedule`

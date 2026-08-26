@@ -139,7 +139,7 @@ export function getOffersForLength(length: LessonLength) {
   });
 }
 
-/** Kept for HomeJsonLd offer catalog — monthlyPrice is the MTM rate. */
+/** Kept for HomeJsonLd offer catalog. monthlyPrice is the MTM rate. */
 export const PRICING_TIERS: PricingTier[] = LESSON_LENGTHS.map((length) => ({
   length,
   label: `${length} Min`,

@@ -9,7 +9,7 @@ const geist = Geist({
 
 export const metadata: Metadata = {
   title: {
-    absolute: "Matt Shill — Developer",
+    absolute: "Matt Shill | Developer",
   },
   description:
     "Software developer and founder. I build focused products, from an AI-driven music education platform to production systems for businesses I run.",
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Matt Shill — Developer",
+    title: "Matt Shill | Developer",
     description: "Personal software developer portfolio.",
     url: "/developer",
     siteName: "Matt Shill",
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary",
-    title: "Matt Shill — Developer",
+    title: "Matt Shill | Developer",
     description: "Personal software developer portfolio.",
   },
 };

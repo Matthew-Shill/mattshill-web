@@ -55,7 +55,7 @@ export const privacyPolicy: LegalDocument = {
         "Process subscriptions, invoices, and cancellations through Stripe.",
         "Send lesson confirmations, schedule changes, billing notices, and replies to your messages.",
         "Create lesson notes, assignments, and progress records in the student portal.",
-        "Record lessons for instruction, review, and the Never Miss a Lesson™ guarantee — not for advertising.",
+        "Record lessons for instruction, review, and the Never Miss a Lesson™ guarantee, not for advertising."
         "Operate, secure, and improve the website and studio.",
         "Comply with law and enforce our [Terms of Service](/terms).",
       ],
@@ -92,14 +92,14 @@ export const privacyPolicy: LegalDocument = {
     {
       heading: "Cookies and similar technologies",
       paragraphs: [
-        "The website uses cookies and similar technologies that are needed to operate the site. Embedded third-party tools — including Stripe, My Music Staff widgets, and the scheduling iframe — may set their own cookies or local storage. Those tools are governed by their own privacy policies.",
+        "The website uses cookies and similar technologies that are needed to operate the site. Embedded third-party tools, including Stripe, My Music Staff widgets, and the scheduling iframe, may set their own cookies or local storage. Those tools are governed by their own privacy policies."
         "This site does not currently run a separate first-party advertising or analytics pixel. Your browser settings can block some cookies, which may affect checkout, scheduling, or the portal.",
       ],
     },
     {
       heading: "How long we keep information",
       paragraphs: [
-        "We keep student, billing, and lesson records for as long as you have an active account and for a reasonable period afterward — for example, to complete a billing cycle, handle a question, or meet recordkeeping obligations. Recordings and portal notes are retained for instructional and studio-administration purposes unless you ask us to delete them and we are not required to keep them.",
+        "We keep student, billing, and lesson records for as long as you have an active account and for a reasonable period afterward, for example to complete a billing cycle, handle a question, or meet recordkeeping obligations. Recordings and portal notes are retained for instructional and studio-administration purposes unless you ask us to delete them and we are not required to keep them."
         "You can request deletion at [contact@mattshill.com](mailto:contact@mattshill.com). We may retain limited information when the law requires it or when we need it to resolve a dispute.",
       ],
     },
@@ -190,7 +190,7 @@ export const termsOfService: LegalDocument = {
       heading: "Never Miss a Lesson™",
       paragraphs: [
         "Every subscription includes the Never Miss a Lesson™ guarantee. If a student cannot attend the live lesson, you may request a custom recorded lesson with updated notes so that week’s progress is not lost. Live lessons may also be recorded for review.",
-        "A Never Miss a Lesson™ video is a makeup for that week — it is not a refund, a credit, or an extra lesson. If I need to cancel a live lesson, I will reschedule or provide a recorded lesson so you still receive instruction for that week.",
+        "A Never Miss a Lesson™ video is a makeup for that week. It is not a refund, a credit, or an extra lesson. If I need to cancel a live lesson, I will reschedule or provide a recorded lesson so you still receive instruction for that week."
       ],
     },
     {
@@ -224,7 +224,7 @@ export const termsOfService: LegalDocument = {
     {
       heading: "Website use",
       paragraphs: [
-        "You may use mattshill.com to learn about the studio, book a trial, subscribe, and reach the portal. You may not misuse the site — including attempting to break security, scrape the site in a way that harms its operation, or use it for anything unlawful.",
+        "You may use mattshill.com to learn about the studio, book a trial, subscribe, and reach the portal. You may not misuse the site, including attempting to break security, scrape the site in a way that harms its operation, or use it for anything unlawful."
       ],
     },
     {
@@ -237,13 +237,13 @@ export const termsOfService: LegalDocument = {
     {
       heading: "Indemnity",
       paragraphs: [
-        "You agree to indemnify and hold harmless Matt Shill Music and Matt Shill from claims, damages, and reasonable legal fees arising from your (or the student’s) misuse of the site or lessons, or from your breach of these Terms — except to the extent we caused the problem.",
+        "You agree to indemnify and hold harmless Matt Shill Music and Matt Shill from claims, damages, and reasonable legal fees arising from your (or the student’s) misuse of the site or lessons, or from your breach of these Terms, except to the extent we caused the problem."
       ],
     },
     {
       heading: "Ending the relationship",
       paragraphs: [
-        "You may cancel as described in the billing section. We may suspend or end access if you breach these Terms, fail to pay, or if we discontinue the studio. Sections that should survive — including payment already due, intellectual property, disclaimers, limitation of liability, and indemnity — will survive cancellation.",
+        "You may cancel as described in the billing section. We may suspend or end access if you breach these Terms, fail to pay, or if we discontinue the studio. Sections that should survive, including payment already due, intellectual property, disclaimers, limitation of liability, and indemnity, will survive cancellation."
       ],
     },
     {
@@ -257,7 +257,7 @@ export const termsOfService: LegalDocument = {
       paragraphs: [
         "These Terms, together with the [Privacy Policy](/privacy) and the plan you select at checkout, are the entire agreement between you and Matt Shill Music for the website and lessons. They replace any prior informal promises about the same subject.",
         "These Terms are governed by the laws of the United States, without regard to conflict-of-law rules. If a court finds a part of these Terms unenforceable, the rest remains in effect.",
-        "Matt Shill Music — [contact@mattshill.com](mailto:contact@mattshill.com).",
+        "Matt Shill Music: [contact@mattshill.com](mailto:contact@mattshill.com).",
       ],
     },
   ],

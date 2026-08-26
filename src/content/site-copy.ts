@@ -15,7 +15,7 @@ export const siteCopy = {
     headline: "Online lessons that",
     headlineAccent: "actually stick.",
     subtitle:
-      "One-on-one piano, guitar, voice, bass, drums, and songwriting — music you want to play.",
+      "One-on-one piano, guitar, voice, bass, drums, and songwriting: music you want to play.",
     cta: "Book Your Free Trial",
     ctaNote: "30 min · no card · confirmed in 24 hours",
     ctaSecondary: "See how lessons work",
@@ -47,7 +47,7 @@ export const siteCopy = {
         instrument: "Guitar",
         featured: true,
         quote:
-          "I can't explain how much more confident my son feels now — and how much he's learning about the music he likes. He definitely clicks with Matt, who was upfront and organized with scheduling.",
+          "I can't explain how much more confident my son feels now, and how much he's learning about the music he likes. He definitely clicks with Matt, who was upfront and organized with scheduling.",
       },
       {
         name: "Dailah Mial",
@@ -62,14 +62,14 @@ export const siteCopy = {
         instrument: "Guitar",
         featured: true,
         quote:
-          "I started as a beginner, and after the free trial I knew I'd be taking lessons. Matt is attentive, organized, and patient — he's not just teaching people to play, but to be confident performers. I've noticed a ton of progress.",
+          "I started as a beginner, and after the free trial I knew I'd be taking lessons. Matt is attentive, organized, and patient. He's not just teaching people to play, but to be confident performers. I've noticed a ton of progress.",
       },
       {
         name: "Graham Corbett",
         role: "Student",
         instrument: "Guitar",
         quote:
-          "I'm 24 and had been playing guitar for almost a year. After four months with Matt, my progress has exploded — I even started bass and keyboard. He meets you where you're at and genuinely cares that you're improving.",
+          "I'm 24 and had been playing guitar for almost a year. After four months with Matt, my progress has exploded. I even started bass and keyboard. He meets you where you're at and genuinely cares that you're improving.",
       },
       {
         name: "Madysen G.",
@@ -88,7 +88,7 @@ export const siteCopy = {
       {
         title: "Kids & Teens",
         description:
-          "Technique and music they want to play — so practice isn't a fight.",
+          "Technique and music they want to play, so practice isn't a fight.",
         instruments: ["Piano", "Guitar", "Voice", "Drums"],
       },
       {
@@ -100,7 +100,7 @@ export const siteCopy = {
       {
         title: "Audition Prep",
         description:
-          "Repertoire, technique, and performance — from someone who's been through it.",
+          "Repertoire, technique, and performance, from someone who's been through it.",
         instruments: ["Piano", "Guitar", "Voice"],
       },
       {
@@ -161,7 +161,7 @@ export const siteCopy = {
     billedAnnually: "annually",
     cancelAnytime: "Cancel anytime before your next billing cycle",
     cancelPrepaid:
-      "Prepaid term — renews automatically at current rate unless canceled at least 7 days before your renewal date",
+      "Prepaid term: renews automatically at current rate unless canceled at least 7 days before your renewal date",
     singleLessonPrompt: "Just need one lesson?",
     singleLessonFinePrint: "one-time",
     singleLessonCta: "Buy a lesson",
@@ -170,12 +170,12 @@ export const siteCopy = {
   },
 
   promo: {
-    bannerDesktop: "New students: 10% off your first plan — code",
-    bannerMobile: "New students: 10% off —",
+    bannerDesktop: "New students: 10% off your first plan. Code",
+    bannerMobile: "New students: 10% off",
     bannerDismiss: "Dismiss welcome offer",
     popupHeadline: "10% off your first plan",
     popupSupport: "First-time students only. Applied once at checkout.",
-    popupCta: "Start month-to-month — 30 min",
+    popupCta: "Start month-to-month, 30 min",
     popupTrial: "Prefer to book a free trial first?",
     popupFinePrint: "Or pick a longer plan on the pricing page.",
     popupClose: "Close welcome offer",
@@ -186,11 +186,11 @@ export const siteCopy = {
   about: {
     title: "Meet Matt Shill",
     pullQuote:
-      "I want every student to leave a lesson feeling like they made real progress — and excited to come back next week.",
+      "I want every student to leave a lesson feeling like they made real progress, and excited to come back next week.",
     bio: [
-      "I've taught for 15+ years — first lessons through conservatory auditions. I meet you where you are and help you get where you want to go.",
-      "Dual degrees in Piano and Guitar Performance from Frost (University of Miami), with early training at Eastman. I teach piano, guitar, voice, bass, and drums — formal technique plus real-world musicianship.",
-      "Students have gone on to Juilliard, Berklee, and Manhattan School of Music. Outside the studio I write, record, and perform — with over a million streams on my debut album.",
+      "I've taught for 15+ years, from first lessons through conservatory auditions. I meet you where you are and help you get where you want to go.",
+      "Dual degrees in Piano and Guitar Performance from Frost (University of Miami), with early training at Eastman. I teach piano, guitar, voice, bass, and drums: formal technique plus real-world musicianship.",
+      "Students have gone on to Juilliard, Berklee, and Manhattan School of Music. Outside the studio I write, record, and perform, with over a million streams on my debut album.",
     ],
   },
 
@@ -202,12 +202,12 @@ export const siteCopy = {
       {
         question: "Are online lessons as effective as in-person?",
         answer:
-          "For technique, repertoire, theory, and audition coaching — yes. Lessons are live, one-on-one video. You'll need a reliable connection, a camera, and your instrument. I work with students across time zones.",
+          "For technique, repertoire, theory, and audition coaching: yes. Lessons are live, one-on-one video. You'll need a reliable connection, a camera, and your instrument. I work with students across time zones.",
       },
       {
         question: "What ages and levels do you teach?",
         answer:
-          "Kids, teens, and adults — complete beginners through conservatory audition prep. If you can sit at the instrument for a focused half hour, we can work together. We'll confirm fit at the free trial.",
+          "Kids, teens, and adults: complete beginners through conservatory audition prep. If you can sit at the instrument for a focused half hour, we can work together. We'll confirm fit at the free trial.",
       },
       {
         question: "What's included in the free trial?",
@@ -235,13 +235,13 @@ export const siteCopy = {
       {
         question: "How soon can we start, and what times are open?",
         answer:
-          "Most new students start within a week of the trial. I teach across time zones — we'll find a recurring weekly slot that fits. Availability is limited, so the trial is the fastest way to lock a time.",
+          "Most new students start within a week of the trial. I teach across time zones, and we'll find a recurring weekly slot that fits. Availability is limited, so the trial is the fastest way to lock a time.",
         inline: 4,
       },
       {
         question: "Do parents sit in on kids' lessons?",
         answer:
-          "For younger students, parents are welcome to observe — especially early on. As students get comfortable, many prefer to learn independently. We'll find what works best for your family.",
+          "For younger students, parents are welcome to observe, especially early on. As students get comfortable, many prefer to learn independently. We'll find what works best for your family.",
       },
     ],
   },
@@ -255,7 +255,7 @@ export const siteCopy = {
     trialLabel: "Book Your Free Trial",
     scheduleLabel: "Schedule a Time",
     responseTime:
-      "Book a trial — I'll confirm within 24 hours. Questions? Email anytime.",
+      "Book a trial. I'll confirm within 24 hours. Questions? Email anytime.",
     trustSignals: [
       "No credit card for the trial",
       "Never Miss A Lesson™ on every plan",
@@ -306,11 +306,11 @@ export const siteCopy = {
     title: "Book your free trial",
     metaTitle: "Free Trial Online Music Lesson | Matt Shill Music",
     description:
-      "Book a free online music lesson trial with Matt Shill. Tell me your goals — piano, guitar, voice, and more — and I'll confirm a time within 24 hours.",
+      "Book a free online music lesson trial with Matt Shill. Tell me your goals (piano, guitar, voice, and more) and I'll confirm a time within 24 hours.",
     seoBody:
-      "Your free trial is a no-pressure online music lesson where we talk through goals, play a bit so I can assess your level, and see whether weekly lessons are the right fit. Students of every age start here — beginners, returning adults, and audition-track players alike.",
+      "Your free trial is a no-pressure online music lesson where we talk through goals, play a bit so I can assess your level, and see whether weekly lessons are the right fit. Students of every age start here: beginners, returning adults, and audition-track players alike.",
     highlights: [
-      "No commitment — just a chance to see if we're a good fit",
+      "No commitment, just a chance to see if we're a good fit",
       "We'll discuss your goals and assess your current level",
       "Bring your instrument (or use a keyboard for piano)",
       "Plan for about 30 minutes for the trial session",
@@ -322,7 +322,7 @@ export const siteCopy = {
     title: "Choose your weekly lesson time",
     metaTitle: "Schedule Online Music Lessons | Matt Shill Music",
     description:
-      "Schedule your weekly online music lesson time with Matt Shill. Pick length, time zone, and preferred slot — usually confirmed within one business day.",
+      "Schedule your weekly online music lesson time with Matt Shill. Pick length, time zone, and preferred slot, usually confirmed within one business day.",
     seoBody:
       "After you subscribe, use this page to choose the weekly slot that fits your life. All confirmed online music lessons are one-on-one, and your schedule lives in the student portal alongside assignments and notes.",
     highlights: [
@@ -352,7 +352,7 @@ export const siteCopy = {
   lessonsIndex: {
     title: "Online music lessons by instrument",
     intro:
-      "Every instrument path is one-on-one, goal-based, and taught live online. Pick the lesson track that matches what you want to learn — then book a free trial.",
+      "Every instrument path is one-on-one, goal-based, and taught live online. Pick the lesson track that matches what you want to learn, then book a free trial.",
   },
 
   errors: {
@@ -363,7 +363,7 @@ export const siteCopy = {
         "That page isn't on the program. Return home or browse online music lessons with Matt Shill.",
       eyebrow: "Page not found",
       title: "This page missed the lesson.",
-      body: "The URL you asked for isn't on the program. Head home, browse lessons, or book a free trial — we'll get you back to the music.",
+      body: "The URL you asked for isn't on the program. Head home, browse lessons, or book a free trial. We'll get you back to the music.",
     },
     unexpected: {
       code: "500",

@@ -27,7 +27,7 @@ export const developerCopy = {
   intro: {
     headline: "I build focused, real products.",
     lede:
-      "Software developer and founder based in the US. I build focused, real products — from an AI-driven music education platform to production systems for two other businesses I run.",
+      "Software developer and founder based in the US. I build focused, real products, from an AI-driven music education platform to production systems for two other businesses I run."
     body: [
       "My background is in music, which shapes how I approach product: I care about craft, usability, and shipping things people actually use.",
     ],
@@ -96,7 +96,7 @@ export const developerCopy = {
       name: "Matt Shill Music",
       role: "Founder, Full-Stack Developer",
       summary:
-        "Production website and business system for my music teaching business — built and maintain all client-facing flows (booking, scheduling, payments) and backend systems solo, currently serving 25–50 active students.",
+        "Production website and business system for my music teaching business. I built and maintain all client-facing flows (booking, scheduling, payments) and backend systems solo, currently serving 25–50 active students."
       tags: [],
       links: [
         { label: "Live site", href: "https://www.mattshill.com/" },
