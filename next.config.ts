@@ -1,14 +1,34 @@
 import type { NextConfig } from "next";
-import { DEVELOPER_HOST } from "./src/lib/developer-host";
+import { ARTIST_HOST, ARTIST_ORIGIN } from "./src/lib/artist-host";
+import { DEVELOPER_HOST, DEVELOPER_ORIGIN } from "./src/lib/developer-host";
 
 const developerHost = {
   type: "host" as const,
   value: DEVELOPER_HOST,
 };
 
+const artistHost = {
+  type: "host" as const,
+  value: ARTIST_HOST,
+};
+
+const teachingHosts = [
+  { type: "host" as const, value: "www.mattshill.com" },
+  { type: "host" as const, value: "mattshill.com" },
+] as const;
+
 const noindexHeaders = [
   { key: "X-Robots-Tag", value: "noindex, nofollow, noarchive" },
 ];
+
+function teachingRedirects(source: string, destination: string) {
+  return teachingHosts.map((host) => ({
+    source,
+    has: [host],
+    destination,
+    permanent: true,
+  }));
+}
 
 const nextConfig: NextConfig = {
   async headers() {
@@ -47,6 +67,34 @@ const nextConfig: NextConfig = {
         destination: "/:path*",
         permanent: false,
       },
+      {
+        source: "/artist",
+        has: [artistHost],
+        destination: "/",
+        permanent: false,
+      },
+      {
+        source: "/artist/:path*",
+        has: [artistHost],
+        destination: "/:path*",
+        permanent: false,
+      },
+      {
+        source: "/epk",
+        has: [artistHost],
+        destination: "/",
+        permanent: false,
+      },
+      ...teachingRedirects("/developer", DEVELOPER_ORIGIN),
+      ...teachingRedirects("/developer/:path*", `${DEVELOPER_ORIGIN}/:path*`),
+      ...teachingRedirects("/artist", ARTIST_ORIGIN),
+      ...teachingRedirects("/artist/:path*", `${ARTIST_ORIGIN}/:path*`),
+      ...teachingRedirects("/epk", ARTIST_ORIGIN),
+      {
+        source: "/epk",
+        destination: "/artist",
+        permanent: false,
+      },
     ];
   },
   async rewrites() {
@@ -57,12 +105,22 @@ const nextConfig: NextConfig = {
           has: [developerHost],
           destination: "/developer",
         },
+        {
+          source: "/",
+          has: [artistHost],
+          destination: "/artist",
+        },
       ],
       afterFiles: [
         {
           source: "/:path*",
           has: [developerHost],
           destination: "/developer/:path*",
+        },
+        {
+          source: "/:path*",
+          has: [artistHost],
+          destination: "/artist/:path*",
         },
       ],
     };

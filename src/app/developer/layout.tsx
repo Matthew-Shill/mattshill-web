@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist } from "next/font/google";
+import { DEVELOPER_ORIGIN } from "@/lib/developer-host";
 import "./developer.css";
 
 const geist = Geist({
@@ -19,7 +20,7 @@ export const metadata: Metadata = {
   publisher: "Matt Shill",
   category: "technology",
   alternates: {
-    canonical: "/developer",
+    canonical: DEVELOPER_ORIGIN,
   },
   robots: {
     index: false,
@@ -37,7 +38,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Matt Shill — Developer",
     description: "Personal software developer portfolio.",
-    url: "/developer",
+    url: DEVELOPER_ORIGIN,
     siteName: "Matt Shill",
     locale: "en_US",
     type: "website",

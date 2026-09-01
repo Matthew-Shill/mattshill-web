@@ -33,6 +33,12 @@ npm start
 | `/free-trial` | My Music Staff free trial signup widget |
 | `/portal` | My Music Staff student portal widget |
 | `/schedule` | Availability iframe for weekly lesson time requests |
+| `/artist`, `/epk` | Redirect to [music.mattshill.com](https://music.mattshill.com) |
+| `/developer` | Redirect to [developer.mattshill.com](https://developer.mattshill.com) (noindex) |
+
+The artist EPK is served at `music.mattshill.com`. The developer portfolio is served at `developer.mattshill.com`. Add both domains in Vercel (same project). Locally, `/artist` and `/developer` still work.
+
+The booking form posts to [FormSubmit](https://formsubmit.co) at `contact@mattshill.com`. The first submission sends a confirmation email — click the link in that message so later venue inquiries arrive.
 
 ## Configuration
 
@@ -51,7 +57,7 @@ npm start
 
 After deploying to Vercel:
 
-1. In the Vercel project, go to **Settings → Domains** and add `mattshill.com` and `www.mattshill.com`.
+1. In the Vercel project, go to **Settings → Domains** and add `mattshill.com`, `www.mattshill.com`, `music.mattshill.com`, and `developer.mattshill.com`.
 2. At your domain registrar, update DNS:
 
    **Option A — Vercel nameservers (recommended)**
@@ -64,6 +70,8 @@ After deploying to Vercel:
    |------|------|-------|
    | A | `@` | `76.76.21.21` |
    | CNAME | `www` | `cname.vercel-dns.com` |
+   | CNAME | `music` | `cname.vercel-dns.com` |
+   | CNAME | `developer` | `cname.vercel-dns.com` |
 
 3. Wait for DNS propagation (usually minutes, up to 48 hours).
 4. Vercel will provision SSL automatically.

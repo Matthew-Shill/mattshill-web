@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { headers } from "next/headers";
+import { ARTIST_HOST, isArtistHost } from "@/lib/artist-host";
 import { isDeveloperHost } from "@/lib/developer-host";
 import { SITE_URL } from "@/lib/site";
 
@@ -16,6 +17,19 @@ export default async function robots(): Promise<MetadataRoute.Robots> {
           disallow: "/",
         },
       ],
+    };
+  }
+
+  if (isArtistHost(host)) {
+    return {
+      rules: [
+        {
+          userAgent: "*",
+          allow: "/",
+        },
+      ],
+      sitemap: `${SITE_URL}/sitemap.xml`,
+      host: `https://${ARTIST_HOST}`,
     };
   }
 

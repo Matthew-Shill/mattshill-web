@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { LESSON_PAGES, LESSON_SLUGS } from "@/content/lessons";
 import { siteCopy } from "@/content/site-copy";
+import { ARTIST_ORIGIN } from "@/lib/artist-host";
 
 export function SiteFooter() {
   return (
@@ -53,6 +54,11 @@ export function SiteFooter() {
                   <Link href="/portal" className="text-white/80 hover:text-white">
                     {siteCopy.nav.studentPortal}
                   </Link>
+                </li>
+                <li>
+                  <a href={ARTIST_ORIGIN} className="text-white/80 hover:text-white">
+                    Original music
+                  </a>
                 </li>
                 <li>
                   <a

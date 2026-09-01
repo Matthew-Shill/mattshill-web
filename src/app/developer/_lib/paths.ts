@@ -5,7 +5,7 @@ function requestHost(headerList: Headers) {
   return headerList.get("x-forwarded-host") ?? headerList.get("host");
 }
 
-/** Portfolio home: `/` on the subdomain, `/developer` on www. */
+/** Portfolio home: `/` on developer.mattshill.com, `/developer` locally. */
 export async function getDeveloperHomeHref() {
   const headerList = await headers();
   return isDeveloperHost(requestHost(headerList)) ? "/" : "/developer";

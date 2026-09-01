@@ -1,0 +1,163 @@
+/* Artist EPK only. Lessons-site and developer globals stay untouched. */
+html:has([data-artist-site]) {
+  --artist-bg: #f3ead8;
+  --artist-fg: #3a2218;
+  --artist-muted: #7a5344;
+  --artist-border: #d4c0a4;
+  --artist-soft: #e8d9c2;
+  --artist-accent: #c4341b;
+  --artist-accent-hover: #a52b16;
+  --artist-cream: #f8f1e4;
+}
+
+body:has([data-artist-site]) {
+  background: var(--artist-bg);
+  color: var(--artist-fg);
+}
+
+[data-artist-site] {
+  position: relative;
+  font-family: var(--font-fraunces), "Iowan Old Style", Palatino, serif;
+}
+
+[data-artist-site]::before {
+  content: "";
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+  opacity: 0.18;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+[data-artist-site] h1,
+[data-artist-site] h2,
+[data-artist-site] .artist-wordmark {
+  font-family: var(--font-artist-display), "Cooper Black", "Iowan Old Style", serif;
+  letter-spacing: -0.02em;
+  color: var(--artist-accent);
+}
+
+[data-artist-site] a:focus-visible,
+[data-artist-site] button:focus-visible,
+[data-artist-site] input:focus-visible,
+[data-artist-site] select:focus-visible,
+[data-artist-site] textarea:focus-visible {
+  outline: 2px solid var(--artist-accent);
+  outline-offset: 3px;
+}
+
+.artist-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1.5px solid var(--artist-accent);
+  background: var(--artist-accent);
+  color: var(--artist-cream);
+  padding: 0.65rem 1.35rem;
+  font-size: 0.92rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  transition:
+    background-color 160ms ease,
+    color 160ms ease,
+    border-color 160ms ease;
+}
+
+.artist-btn:hover {
+  background: var(--artist-accent-hover);
+  border-color: var(--artist-accent-hover);
+}
+
+.artist-btn-ghost {
+  background: transparent;
+  color: var(--artist-accent);
+}
+
+.artist-btn-ghost:hover {
+  background: var(--artist-accent);
+  color: var(--artist-cream);
+  border-color: var(--artist-accent);
+}
+
+.artist-portrait {
+  position: relative;
+  isolation: isolate;
+}
+
+.artist-portrait img {
+  filter: sepia(0.22) contrast(0.94) saturate(0.82) brightness(1.03);
+}
+
+.artist-portrait::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    transparent 58%,
+    var(--artist-bg) 96%
+  );
+  pointer-events: none;
+}
+
+.artist-embed {
+  aspect-ratio: 16 / 9;
+  width: 100%;
+  overflow: hidden;
+  background: var(--artist-soft);
+  border: 1px solid var(--artist-border);
+}
+
+.artist-embed iframe {
+  display: block;
+  height: 100%;
+  width: 100%;
+  border: 0;
+}
+
+.artist-spotify {
+  min-height: 420px;
+  overflow: hidden;
+  background: var(--artist-soft);
+  border: 1px solid var(--artist-border);
+}
+
+.artist-spotify iframe {
+  display: block;
+  width: 100%;
+  min-height: 420px;
+  border: 0;
+}
+
+.artist-feed-tab[aria-selected="true"] {
+  background: var(--artist-accent);
+  color: var(--artist-cream);
+  border-color: var(--artist-accent);
+}
+
+.artist-tiktok .tiktok-embed {
+  margin: 0 auto;
+}
+
+.artist-ig-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+
+@media (min-width: 640px) {
+  .artist-ig-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.artist-ig-grid .instagram-media {
+  margin: 0 auto !important;
+  min-width: 0 !important;
+  max-width: 100% !important;
+  width: 100% !important;
+  background: var(--artist-cream) !important;
+  border: 1px solid var(--artist-border) !important;
+}

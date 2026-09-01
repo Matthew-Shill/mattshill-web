@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { LESSON_SLUGS } from "@/content/lessons";
+import { ARTIST_ORIGIN } from "@/lib/artist-host";
 import { SITE_URL } from "@/lib/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -27,6 +28,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     ...lessonRoutes,
+    {
+      url: ARTIST_ORIGIN,
+      lastModified: now,
+      changeFrequency: "weekly",
+      priority: 0.8,
+      images: [`${SITE_URL}/Headshot.jpg`],
+    },
     {
       url: `${SITE_URL}/free-trial`,
       lastModified: now,
