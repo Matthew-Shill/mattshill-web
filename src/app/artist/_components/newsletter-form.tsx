@@ -11,20 +11,29 @@ const inputClass =
 
 type NewsletterFormProps = {
   compact?: boolean;
+  variant?: "default" | "hero";
 };
 
-export function NewsletterForm({ compact = false }: NewsletterFormProps) {
+export function NewsletterForm({
+  compact = false,
+  variant = "default",
+}: NewsletterFormProps) {
   const [state, formAction, pending] = useActionState(
     submitNewsletter,
     initialNewsletterState,
   );
   const copy = artistCopy.newsletter;
+  const isHero = variant === "hero";
 
   if (state.status === "success") {
     return (
       <p
         role="status"
-        className="border border-[var(--artist-border)] bg-[var(--artist-soft)] px-5 py-6 text-sm leading-relaxed text-[var(--artist-fg)]"
+        className={
+          isHero
+            ? "text-sm leading-relaxed text-[var(--artist-fg)]"
+            : "border border-[var(--artist-border)] bg-[var(--artist-soft)] px-5 py-6 text-sm leading-relaxed text-[var(--artist-fg)]"
+        }
       >
         {state.message}
       </p>
@@ -32,17 +41,27 @@ export function NewsletterForm({ compact = false }: NewsletterFormProps) {
   }
 
   return (
-    <form action={formAction} className={compact ? "space-y-3" : "max-w-xl space-y-4"}>
+    <form
+      action={formAction}
+      className={
+        isHero ? "w-full max-w-md space-y-3 text-left" : compact ? "space-y-3" : "max-w-xl space-y-4"
+      }
+    >
+      {isHero ? (
+        <p className="text-center text-sm leading-relaxed text-[var(--artist-muted)]">
+          {copy.intro}
+        </p>
+      ) : null}
       <div className="flex flex-col gap-3 sm:flex-row sm:items-end">
         <label className="block min-w-0 flex-1 text-sm text-[var(--artist-muted)]">
-          {copy.email}
+          <span className={isHero ? "sr-only" : undefined}>{copy.email}</span>
           <input
             required
             type="email"
             name="email"
             autoComplete="email"
             placeholder={copy.emailPlaceholder}
-            className={`${inputClass} mt-1.5`}
+            className={isHero ? inputClass : `${inputClass} mt-1.5`}
           />
         </label>
         <button
@@ -67,8 +86,14 @@ export function NewsletterForm({ compact = false }: NewsletterFormProps) {
         </p>
       ) : null}
 
-      <p className="text-xs leading-relaxed text-[var(--artist-muted)]">
-        {copy.privacy}{" "}
+      <p
+        className={
+          isHero
+            ? "text-center text-xs leading-relaxed text-[var(--artist-muted)]"
+            : "text-xs leading-relaxed text-[var(--artist-muted)]"
+        }
+      >
+        {isHero ? copy.heroPrivacy : copy.privacy}{" "}
         <a
           href={`${SITE_URL}/privacy`}
           className="underline decoration-[var(--artist-border)] underline-offset-4 hover:text-[var(--artist-accent)] hover:decoration-[var(--artist-accent)]"

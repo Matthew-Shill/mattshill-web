@@ -98,7 +98,10 @@ body:has([data-artist-site]) {
 .artist-hero-stage {
   position: sticky;
   top: 4.75rem;
-  padding-bottom: 1.5rem;
+  display: flex;
+  min-height: calc(100svh - 4.75rem);
+  flex-direction: column;
+  padding-bottom: 1.25rem;
 }
 
 .artist-hero-eyebrow,
@@ -133,6 +136,20 @@ body:has([data-artist-site]) {
   opacity: calc(1 - var(--hero-progress) * 1.15);
 }
 
+.artist-hero-actions {
+  margin-top: auto;
+  width: 100%;
+  padding-top: 1.25rem;
+  background: linear-gradient(
+    to top,
+    var(--artist-bg) 55%,
+    color-mix(in srgb, var(--artist-bg) 70%, transparent) 82%,
+    transparent
+  );
+  position: relative;
+  z-index: 5;
+}
+
 @media (min-width: 640px) {
   .artist-hero {
     min-height: 160vh;
@@ -153,6 +170,7 @@ body:has([data-artist-site]) {
   .artist-hero-stage,
   .artist-hero--static .artist-hero-stage {
     position: static;
+    min-height: 0;
   }
 
   .artist-hero-eyebrow,

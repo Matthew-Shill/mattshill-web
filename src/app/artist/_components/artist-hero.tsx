@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useEffect, useRef } from "react";
 import { artistCopy } from "../_content";
+import { NewsletterForm } from "./newsletter-form";
 
 export function ArtistHero() {
   const rootRef = useRef<HTMLElement>(null);
@@ -73,24 +74,22 @@ export function ArtistHero() {
         <p className="artist-hero-copy mt-2 max-w-md text-base leading-relaxed text-[var(--artist-muted)]">
           {artistCopy.hero.subline}
         </p>
-        <div className="artist-hero-copy mt-8 flex flex-wrap items-center justify-center gap-3">
-          <a href="#listen" className="artist-btn">
-            {artistCopy.hero.ctaListen}
-          </a>
-          <a href="#book" className="artist-btn artist-btn-ghost">
-            {artistCopy.hero.ctaBook}
-          </a>
+        <div className="artist-hero-actions w-full">
+          <div className="flex flex-wrap items-center justify-center gap-3">
+            <a href="#listen" className="artist-btn">
+              {artistCopy.hero.ctaListen}
+            </a>
+            <a href="#book" className="artist-btn artist-btn-ghost">
+              {artistCopy.hero.ctaBook}
+            </a>
+          </div>
+          <div
+            id="list"
+            className="mt-6 flex w-full scroll-mt-28 justify-center"
+          >
+            <NewsletterForm variant="hero" />
+          </div>
         </div>
-        <ul className="artist-hero-copy mt-8 flex flex-wrap justify-center gap-2">
-          {artistCopy.hero.proof.map((item) => (
-            <li
-              key={item}
-              className="border border-[var(--artist-border)] px-3 py-1 text-xs tracking-wide text-[var(--artist-muted)]"
-            >
-              {item}
-            </li>
-          ))}
-        </ul>
       </div>
     </section>
   );

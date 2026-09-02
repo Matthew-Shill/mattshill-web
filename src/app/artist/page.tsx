@@ -1,7 +1,6 @@
 import Image from "next/image";
 import { ArtistHero } from "./_components/artist-hero";
 import { BookingForm } from "./_components/booking-form";
-import { NewsletterForm } from "./_components/newsletter-form";
 import { ArtistJsonLd } from "./_components/json-ld";
 import { SocialFeeds } from "./_components/social-feeds";
 import { StreamingLinks } from "./_components/streaming-links";
@@ -53,19 +52,6 @@ export default function ArtistPage() {
           </div>
           <div className="mt-8">
             <StreamingLinks label={artistCopy.listen.streamingLabel} />
-          </div>
-        </section>
-
-        <section id="list" className="mt-24 scroll-mt-24 sm:mt-32">
-          <p className="text-sm font-medium uppercase tracking-[0.18em] text-[var(--artist-muted)]">
-            {artistCopy.newsletter.eyebrow}
-          </p>
-          <h2 className="mt-3 text-4xl sm:text-5xl">{artistCopy.newsletter.title}</h2>
-          <p className="mt-4 max-w-2xl text-base leading-relaxed text-[var(--artist-muted)]">
-            {artistCopy.newsletter.intro}
-          </p>
-          <div className="mt-8">
-            <NewsletterForm />
           </div>
         </section>
 

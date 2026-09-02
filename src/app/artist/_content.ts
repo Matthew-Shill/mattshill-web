@@ -21,12 +21,6 @@ export const artistCopy = {
     subline: "Original music on all streaming platforms.",
     ctaListen: "Listen",
     ctaBook: "Book a gig",
-    proof: [
-      "Don't Find Me (2019)",
-      "1M+ streams",
-      "Okeechobee Music Festival",
-      "Festival Miami",
-    ],
   },
   listen: {
     eyebrow: "Music",
@@ -53,6 +47,7 @@ export const artistCopy = {
     error: "That didn't go through. Try again in a moment.",
     privacy:
       "I use EmailOctopus to send this. Unsubscribe anytime, or email me to be removed.",
+    heroPrivacy: "Unsubscribe anytime.",
   },
   live: {
     eyebrow: "Watch",
