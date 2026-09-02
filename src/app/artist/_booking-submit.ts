@@ -1,16 +1,5 @@
-"use server";
-
 import { artistCopy } from "./_content";
-
-export type BookingState = {
-  status: "idle" | "success" | "error";
-  message: string;
-};
-
-export const initialBookingState: BookingState = {
-  status: "idle",
-  message: "",
-};
+import type { BookingState } from "./_booking-state";
 
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -18,6 +7,10 @@ function field(formData: FormData, key: string, max: number) {
   const value = formData.get(key);
   if (typeof value !== "string") return "";
   return value.trim().slice(0, max);
+}
+
+function formSubmitSucceeded(data: { success?: boolean | string }) {
+  return data.success === true || data.success === "true";
 }
 
 export async function submitBooking(
@@ -59,20 +52,6 @@ export async function submitBooking(
     artistCopy.booking.eventTypes.find((item) => item.value === eventType)
       ?.label ?? eventType;
 
-  const payload = {
-    name,
-    email,
-    phone,
-    organization,
-    eventType: eventLabel,
-    date,
-    location,
-    message,
-    _replyto: email,
-    _subject: `Booking inquiry — ${name}`,
-    _template: "table",
-  };
-
   try {
     const response = await fetch(
       `https://formsubmit.co/ajax/${artistCopy.booking.email}`,
@@ -82,14 +61,44 @@ export async function submitBooking(
           "Content-Type": "application/json",
           Accept: "application/json",
         },
-        body: JSON.stringify(payload),
+        body: JSON.stringify({
+          name,
+          email,
+          phone,
+          organization,
+          eventType: eventLabel,
+          date,
+          location,
+          message,
+          _replyto: email,
+          _subject: `Booking inquiry — ${name}`,
+          _template: "table",
+          _captcha: "false",
+        }),
       },
     );
 
-    if (!response.ok) {
+    const data = (await response.json().catch(() => null)) as {
+      success?: boolean | string;
+      message?: string;
+    } | null;
+
+    const messageText = data?.message ?? "";
+    const needsActivation = /activat/i.test(messageText);
+
+    if (!response.ok || !data || !formSubmitSucceeded(data)) {
       return {
         status: "error",
-        message: artistCopy.booking.error,
+        message: needsActivation
+          ? artistCopy.booking.activate
+          : artistCopy.booking.error,
+      };
+    }
+
+    if (needsActivation) {
+      return {
+        status: "error",
+        message: artistCopy.booking.activate,
       };
     }
 

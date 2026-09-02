@@ -2,12 +2,12 @@
 
 import { useEffect, useId, useState } from "react";
 import {
-  instagramReels,
   socialLinks,
   tiktokUsername,
   youtubeUploadsEmbedSrc,
 } from "../_content";
 import { InstagramIcon, TikTokIcon, YouTubeIcon } from "./brand-icons";
+import { InstagramCarousel } from "./instagram-carousel";
 
 type Feed = "youtube" | "tiktok" | "instagram";
 
@@ -59,25 +59,6 @@ export function SocialFeeds({
       return () => {
         script.remove();
       };
-    }
-
-    if (feed === "instagram") {
-      const process = () => {
-        window.instgrm?.Embeds.process();
-      };
-      const existing = document.querySelector<HTMLScriptElement>(
-        'script[data-artist-embed="instagram"]',
-      );
-      if (existing && window.instgrm) {
-        process();
-        return;
-      }
-      const script = document.createElement("script");
-      script.src = "https://www.instagram.com/embed.js";
-      script.async = true;
-      script.dataset.artistEmbed = "instagram";
-      script.onload = process;
-      document.body.appendChild(script);
     }
   }, [feed]);
 
@@ -149,26 +130,7 @@ export function SocialFeeds({
           </div>
         ) : null}
 
-        {feed === "instagram" ? (
-          <div className="artist-ig-grid">
-            {instagramReels.map((reel) => (
-              <blockquote
-                key={reel.shortcode}
-                className="instagram-media"
-                data-instgrm-permalink={`https://www.instagram.com/reel/${reel.shortcode}/`}
-                data-instgrm-version="14"
-              >
-                <a
-                  href={`https://www.instagram.com/reel/${reel.shortcode}/`}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  {reel.title}
-                </a>
-              </blockquote>
-            ))}
-          </div>
-        ) : null}
+        {feed === "instagram" ? <InstagramCarousel /> : null}
 
         <p className="mt-4 text-sm text-[var(--artist-muted)]">
           <a
@@ -188,10 +150,4 @@ export function SocialFeeds({
       </div>
     </div>
   );
-}
-
-declare global {
-  interface Window {
-    instgrm?: { Embeds: { process: () => void } };
-  }
 }

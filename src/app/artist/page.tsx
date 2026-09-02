@@ -25,17 +25,17 @@ export default function ArtistPage() {
           <h1 className="mt-4 text-6xl leading-[0.9] sm:text-7xl lg:text-8xl">
             {artistCopy.hero.headline}
           </h1>
-          <div className="artist-portrait relative mx-auto mt-6 aspect-[4/5] w-full max-w-md overflow-hidden">
+          <div className="artist-portrait relative mx-auto mt-4 w-full max-w-sm">
             <Image
-              src="/Headshot.jpg"
+              src="/artist-hero.png"
               alt="Portrait of Matt Shill"
-              fill
+              width={470}
+              height={597}
               priority
-              className="object-cover object-top"
-              sizes="(max-width: 768px) 90vw, 28rem"
+              className="h-auto w-full"
             />
           </div>
-          <p className="relative z-10 -mt-8 max-w-md text-lg leading-relaxed text-[var(--artist-accent)] sm:text-xl">
+          <p className="relative z-10 -mt-6 max-w-md text-lg leading-relaxed text-[var(--artist-accent)] sm:text-xl">
             {artistCopy.tagline}
           </p>
           <p className="mt-2 max-w-md text-base leading-relaxed text-[var(--artist-muted)]">

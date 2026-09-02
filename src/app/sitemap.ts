@@ -33,7 +33,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: now,
       changeFrequency: "weekly",
       priority: 0.8,
-      images: [`${SITE_URL}/Headshot.jpg`],
+      images: [`${SITE_URL}/artist-hero.png`],
     },
     {
       url: `${SITE_URL}/free-trial`,

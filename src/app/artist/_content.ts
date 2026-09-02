@@ -50,7 +50,7 @@ export const artistCopy = {
       "Pick a channel and play. YouTube and TikTok load the live feed; Instagram has recent reels you can watch here or open on the app.",
     youtubeTitle: "Recent videos on YouTube",
     tiktokTitle: "Recent videos on TikTok",
-    instagramTitle: "Recent reels on Instagram",
+    instagramTitle: "Flip through recent reels on Instagram",
   },
   bio: {
     eyebrow: "Press",
@@ -88,6 +88,8 @@ export const artistCopy = {
       "Got it — thanks. I'll reply to the email you sent, usually within one business day.",
     error:
       "The form didn't send. Email me instead and I'll pick it up from there.",
+    activate:
+      "FormSubmit sent an activation email to contact@mattshill.com. Click the link in that message, then submit the form once more. Check spam if you don't see it.",
     emailCta: "Email me",
     fields: {
       name: "Name",
@@ -223,17 +225,31 @@ export const instagramReels = [
   {
     shortcode: "DNeQ3q5y_Ql",
     title: "Birds of a Feather — cover",
+    kind: "reel",
   },
   {
     shortcode: "DNQzCJOOtz-",
     title: "Holocene, pt. 1 — cover",
+    kind: "reel",
   },
   {
     shortcode: "DNWMB5rOtFf",
     title: "Holocene, pt. 2 — cover",
+    kind: "reel",
   },
   {
     shortcode: "DNGPPf_Otzm",
     title: "A loop and Lil Bieber's truth",
+    kind: "reel",
+  },
+  {
+    shortcode: "BpfcbpkB_Rh",
+    title: "Spain — Live at Daza Records",
+    kind: "p",
+  },
+  {
+    shortcode: "BpfEe0YBO3s",
+    title: "Maddie — live at Sofar Sounds Miami",
+    kind: "p",
   },
 ] as const;

@@ -83,23 +83,11 @@ body:has([data-artist-site]) {
 
 .artist-portrait {
   position: relative;
-  isolation: isolate;
 }
 
 .artist-portrait img {
-  filter: sepia(0.22) contrast(0.94) saturate(0.82) brightness(1.03);
-}
-
-.artist-portrait::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to bottom,
-    transparent 58%,
-    var(--artist-bg) 96%
-  );
-  pointer-events: none;
+  height: auto;
+  width: 100%;
 }
 
 .artist-embed {
@@ -141,23 +129,72 @@ body:has([data-artist-site]) {
   margin: 0 auto;
 }
 
-.artist-ig-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1.25rem;
+.artist-ig-carousel {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
 }
 
-@media (min-width: 640px) {
-  .artist-ig-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
+.artist-ig-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
 }
 
-.artist-ig-grid .instagram-media {
-  margin: 0 auto !important;
-  min-width: 0 !important;
-  max-width: 100% !important;
-  width: 100% !important;
-  background: var(--artist-cream) !important;
-  border: 1px solid var(--artist-border) !important;
+.artist-ig-status {
+  flex: 1;
+  min-width: 0;
+  margin: 0;
+  text-align: center;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.artist-ig-nav {
+  flex-shrink: 0;
+  border: 1px solid var(--artist-border);
+  background: var(--artist-cream);
+  color: var(--artist-accent);
+  padding: 0.35rem 0.75rem;
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+.artist-ig-nav:hover {
+  border-color: var(--artist-accent);
+}
+
+.artist-ig-slide {
+  display: flex;
+  justify-content: center;
+  max-width: 26rem;
+  margin: 0 auto;
+}
+
+.artist-ig-frame {
+  display: block;
+  width: 100%;
+  height: 44rem;
+  border: 1px solid var(--artist-border);
+  background: var(--artist-cream);
+}
+
+.artist-ig-dots {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.45rem;
+}
+
+.artist-ig-dot {
+  width: 0.55rem;
+  height: 0.55rem;
+  padding: 0;
+  border: 1px solid var(--artist-border);
+  background: var(--artist-cream);
+}
+
+.artist-ig-dot[aria-selected="true"] {
+  background: var(--artist-accent);
+  border-color: var(--artist-accent);
 }

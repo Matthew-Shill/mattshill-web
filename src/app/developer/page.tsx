@@ -40,13 +40,29 @@ export default async function DeveloperPage() {
       <main className="mx-auto flex w-full max-w-3xl flex-1 flex-col px-5 py-16 sm:px-6 sm:py-24">
         <section id="about" className="scroll-mt-24">
           <div className="flex flex-col gap-8 sm:flex-row sm:items-start sm:gap-10">
-            <Image
-              src={headshot}
-              alt="Portrait of Matt Shill"
-              placeholder="blur"
-              priority
-              className="h-40 w-32 shrink-0 rounded-lg object-cover ring-1 ring-[var(--developer-accent)]/25 sm:h-44 sm:w-36"
-            />
+            <div className="flex w-32 shrink-0 flex-col items-start gap-3 sm:w-36">
+              <Image
+                src={headshot}
+                alt="Portrait of Matt Shill"
+                placeholder="blur"
+                priority
+                className="h-40 w-32 rounded-lg object-cover ring-1 ring-[var(--developer-accent)]/25 sm:h-44 sm:w-36"
+              />
+              <a
+                href={developerCopy.checkr.href}
+                rel="noreferrer"
+                target="_blank"
+                className="opacity-90 transition-opacity hover:opacity-100"
+              >
+                {/* eslint-disable-next-line @next/next/no-img-element -- Checkr embed SVG */}
+                <img
+                  src={developerCopy.checkr.badgeSrc}
+                  alt={developerCopy.checkr.alt}
+                  width={120}
+                  height={24}
+                />
+              </a>
+            </div>
             <div className="min-w-0 flex-1">
               <p className="text-sm font-medium uppercase tracking-[0.18em] text-[#a1a1aa]">
                 {developerCopy.location}

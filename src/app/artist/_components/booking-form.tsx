@@ -1,7 +1,8 @@
 "use client";
 
 import { useActionState } from "react";
-import { initialBookingState, submitBooking } from "../_actions";
+import { initialBookingState } from "../_booking-state";
+import { submitBooking } from "../_booking-submit";
 import { artistCopy } from "../_content";
 
 const inputClass =

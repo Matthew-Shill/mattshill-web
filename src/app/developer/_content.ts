@@ -124,6 +124,12 @@ export const developerCopy = {
       ],
     },
   ] satisfies readonly DeveloperProject[],
+  checkr: {
+    href: "https://checkr.com/profiles/u/4bd662f8-4d58-406e-8aa7-4dc5621a57e8?_ref=embed_badge",
+    badgeSrc:
+      "https://checkr.com/profiles/u/4bd662f8-4d58-406e-8aa7-4dc5621a57e8/verified_badge?_ref=embed_badge",
+    alt: "Checkr Profile",
+  },
   contact: {
     note: "The fastest way to reach me is email.",
     links: [

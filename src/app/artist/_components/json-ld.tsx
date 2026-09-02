@@ -14,7 +14,7 @@ function serializeJsonLd(data: unknown): string {
 
 export function ArtistJsonLd() {
   const pageUrl = ARTIST_ORIGIN;
-  const image = `${SITE_URL}/Headshot.jpg`;
+  const image = `${SITE_URL}/artist-hero.png`;
 
   const person = {
     "@context": "https://schema.org",
