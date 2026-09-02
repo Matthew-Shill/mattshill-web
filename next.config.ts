@@ -30,6 +30,19 @@ function teachingRedirects(source: string, destination: string) {
   }));
 }
 
+const shareImageNames = ["opengraph-image", "twitter-image"] as const;
+
+function hostShareImageRewrites(
+  host: typeof artistHost | typeof developerHost,
+  prefix: "artist" | "developer",
+) {
+  return shareImageNames.map((name) => ({
+    source: `/${name}`,
+    has: [host],
+    destination: `/${prefix}/${name}`,
+  }));
+}
+
 const nextConfig: NextConfig = {
   async headers() {
     return [
@@ -86,9 +99,15 @@ const nextConfig: NextConfig = {
         permanent: false,
       },
       ...teachingRedirects("/developer", DEVELOPER_ORIGIN),
-      ...teachingRedirects("/developer/:path*", `${DEVELOPER_ORIGIN}/:path*`),
+      ...teachingRedirects(
+        "/developer/:path((?!opengraph-image|twitter-image).*)",
+        `${DEVELOPER_ORIGIN}/:path`,
+      ),
       ...teachingRedirects("/artist", ARTIST_ORIGIN),
-      ...teachingRedirects("/artist/:path*", `${ARTIST_ORIGIN}/:path*`),
+      ...teachingRedirects(
+        "/artist/:path((?!opengraph-image|twitter-image).*)",
+        `${ARTIST_ORIGIN}/:path`,
+      ),
       ...teachingRedirects("/epk", ARTIST_ORIGIN),
       {
         source: "/epk",
@@ -110,6 +129,8 @@ const nextConfig: NextConfig = {
           has: [artistHost],
           destination: "/artist",
         },
+        ...hostShareImageRewrites(developerHost, "developer"),
+        ...hostShareImageRewrites(artistHost, "artist"),
       ],
       afterFiles: [
         {

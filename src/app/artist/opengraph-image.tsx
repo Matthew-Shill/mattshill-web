@@ -111,17 +111,17 @@ export default async function ArtistOpenGraphImage() {
         <div
           style={{
             display: "flex",
-            width: 250,
-            height: 318,
-            marginTop: 12,
+            width: 230,
+            height: 340,
+            marginTop: 8,
           }}
         >
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={photoSrc}
             alt=""
-            width={250}
-            height={318}
+            width={230}
+            height={340}
             style={{ objectFit: "contain" }}
           />
         </div>
