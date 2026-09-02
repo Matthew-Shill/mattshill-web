@@ -14,7 +14,7 @@ export type LegalDocument = {
   sections: LegalSection[];
 };
 
-export const LAST_UPDATED = "August 22, 2026";
+export const LAST_UPDATED = "September 1, 2026";
 
 export const privacyPolicy: LegalDocument = {
   slug: "privacy",
@@ -24,7 +24,7 @@ export const privacyPolicy: LegalDocument = {
     "How Matt Shill Music collects, uses, and shares information for online music lessons, scheduling, billing, and the student portal.",
   lastUpdated: LAST_UPDATED,
   intro:
-    "This Privacy Policy explains how Matt Shill Music (“we,” “us,” or “our”) collects, uses, and shares information when you visit mattshill.com, book a free trial, subscribe to lessons, or use our student portal.",
+    "This Privacy Policy explains how Matt Shill Music (“we,” “us,” or “our”) collects, uses, and shares information when you visit mattshill.com or music.mattshill.com, book a free trial, subscribe to lessons, join the artist mailing list, or use our student portal.",
   sections: [
     {
       heading: "Who we are",
@@ -40,6 +40,7 @@ export const privacyPolicy: LegalDocument = {
       ],
       bullets: [
         "Account and contact details: name, email address, phone number, time zone, and messages you send us.",
+        "Mailing list: the email address you submit on music.mattshill.com to hear about new music and shows.",
         "Student details: instrument, age or grade, skill level, goals, and other information needed to plan lessons. For minors, we also collect parent or guardian contact information.",
         "Scheduling and portal data: lesson times, attendance, practice assignments, lesson notes, and in-portal messages.",
         "Lesson recordings: live lessons may be recorded, and Never Miss a Lesson™ makeup videos are recorded when a live session cannot happen.",
@@ -54,6 +55,7 @@ export const privacyPolicy: LegalDocument = {
         "Schedule, deliver, and manage online lessons, including free trials.",
         "Process subscriptions, invoices, and cancellations through Stripe.",
         "Send lesson confirmations, schedule changes, billing notices, and replies to your messages.",
+        "Send music and show updates to people who join the artist mailing list.",
         "Create lesson notes, assignments, and progress records in the student portal.",
         "Record lessons for instruction, review, and the Never Miss a Lesson™ guarantee — not for advertising.",
         "Operate, secure, and improve the website and studio.",
@@ -67,6 +69,7 @@ export const privacyPolicy: LegalDocument = {
       ],
       bullets: [
         "Stripe, for checkout, recurring billing, and the billing portal.",
+        "EmailOctopus, to store mailing-list addresses and send those updates.",
         "My Music Staff, for trial booking and the student portal.",
         "The scheduling tool embedded on this site for choosing a weekly lesson time.",
         "The video meeting service used for live lessons.",

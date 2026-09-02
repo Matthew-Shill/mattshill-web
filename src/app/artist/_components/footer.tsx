@@ -1,6 +1,7 @@
 import { artistCopy, socialLinks } from "../_content";
 import { getLessonsHref } from "../_lib/paths";
 import { SocialIcon } from "./brand-icons";
+import { NewsletterForm } from "./newsletter-form";
 
 export async function ArtistFooter() {
   const lessonsHref = await getLessonsHref();
@@ -8,6 +9,17 @@ export async function ArtistFooter() {
   return (
     <footer className="mt-auto border-t border-[var(--artist-border)]">
       <div className="mx-auto flex max-w-5xl flex-col gap-6 px-5 py-8 sm:px-6">
+        <div className="max-w-xl">
+          <p className="text-sm font-medium text-[var(--artist-fg)]">
+            {artistCopy.newsletter.title}
+          </p>
+          <p className="mt-1 text-sm leading-relaxed text-[var(--artist-muted)]">
+            {artistCopy.newsletter.intro}
+          </p>
+          <div className="mt-4">
+            <NewsletterForm compact />
+          </div>
+        </div>
         <p className="max-w-xl text-sm leading-relaxed text-[var(--artist-muted)]">
           {artistCopy.lessonsCta.line}{" "}
           <a

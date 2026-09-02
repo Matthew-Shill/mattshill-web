@@ -1,5 +1,7 @@
 import Image from "next/image";
+import { ArtistHero } from "./_components/artist-hero";
 import { BookingForm } from "./_components/booking-form";
+import { NewsletterForm } from "./_components/newsletter-form";
 import { ArtistJsonLd } from "./_components/json-ld";
 import { SocialFeeds } from "./_components/social-feeds";
 import { StreamingLinks } from "./_components/streaming-links";
@@ -18,48 +20,7 @@ export default function ArtistPage() {
     <>
       <ArtistJsonLd />
       <main className="mx-auto flex w-full max-w-5xl flex-1 flex-col px-5 py-12 sm:px-6 sm:py-16">
-        <section className="mx-auto flex w-full max-w-xl flex-col items-center text-center">
-          <p className="text-xs font-medium uppercase tracking-[0.22em] text-[var(--artist-muted)]">
-            {artistCopy.hero.eyebrow}
-          </p>
-          <h1 className="mt-4 text-6xl leading-[0.9] sm:text-7xl lg:text-8xl">
-            {artistCopy.hero.headline}
-          </h1>
-          <div className="artist-portrait relative mx-auto mt-4 w-full max-w-sm">
-            <Image
-              src="/artist-hero.png"
-              alt="Portrait of Matt Shill"
-              width={470}
-              height={597}
-              priority
-              className="h-auto w-full"
-            />
-          </div>
-          <p className="relative z-10 -mt-6 max-w-md text-lg leading-relaxed text-[var(--artist-accent)] sm:text-xl">
-            {artistCopy.tagline}
-          </p>
-          <p className="mt-2 max-w-md text-base leading-relaxed text-[var(--artist-muted)]">
-            {artistCopy.hero.subline}
-          </p>
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-            <a href="#listen" className="artist-btn">
-              {artistCopy.hero.ctaListen}
-            </a>
-            <a href="#book" className="artist-btn artist-btn-ghost">
-              {artistCopy.hero.ctaBook}
-            </a>
-          </div>
-          <ul className="mt-8 flex flex-wrap justify-center gap-2">
-            {artistCopy.hero.proof.map((item) => (
-              <li
-                key={item}
-                className="border border-[var(--artist-border)] px-3 py-1 text-xs tracking-wide text-[var(--artist-muted)]"
-              >
-                {item}
-              </li>
-            ))}
-          </ul>
-        </section>
+        <ArtistHero />
 
         <section id="listen" className="mt-24 scroll-mt-24 sm:mt-32">
           <p className="text-sm font-medium uppercase tracking-[0.18em] text-[var(--artist-muted)]">
@@ -92,6 +53,19 @@ export default function ArtistPage() {
           </div>
           <div className="mt-8">
             <StreamingLinks label={artistCopy.listen.streamingLabel} />
+          </div>
+        </section>
+
+        <section id="list" className="mt-24 scroll-mt-24 sm:mt-32">
+          <p className="text-sm font-medium uppercase tracking-[0.18em] text-[var(--artist-muted)]">
+            {artistCopy.newsletter.eyebrow}
+          </p>
+          <h2 className="mt-3 text-4xl sm:text-5xl">{artistCopy.newsletter.title}</h2>
+          <p className="mt-4 max-w-2xl text-base leading-relaxed text-[var(--artist-muted)]">
+            {artistCopy.newsletter.intro}
+          </p>
+          <div className="mt-8">
+            <NewsletterForm />
           </div>
         </section>
 

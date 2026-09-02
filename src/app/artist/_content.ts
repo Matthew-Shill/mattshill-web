@@ -6,10 +6,11 @@ export const artistCopy = {
   seo: {
     title: "Matt Shill — Music",
     description:
-      "Singer-songwriter Matt Shill. Listen to Don't Find Me, watch live videos, and book a gig. Electronic press kit for venues, festivals, and private events.",
+      "Singer-songwriter Matt Shill. Listen to Don't Find Me, join the mailing list, watch live videos, and book a gig. Electronic press kit for venues, festivals, and private events.",
   },
   nav: [
     { label: "Listen", href: "#listen" },
+    { label: "List", href: "#list" },
     { label: "Watch", href: "#watch" },
     { label: "Bio", href: "#bio" },
     { label: "Book", href: "#book" },
@@ -36,6 +37,22 @@ export const artistCopy = {
       "Debut album. Seven songs of rock, soul, and singer-songwriter writing — stories told with a smooth, sultry voice.",
     playerTitle: "Play Don't Find Me on Spotify",
     streamingLabel: "Listen on",
+  },
+  newsletter: {
+    eyebrow: "Mailing list",
+    title: "Stay in touch",
+    intro: "New music, shows, and the occasional note. No spam.",
+    email: "Email",
+    emailPlaceholder: "you@email.com",
+    submit: "Join the list",
+    sending: "Joining…",
+    success: "You're on the list. I'll write when there's something worth hearing.",
+    already: "You're already on the list.",
+    pending: "Check your inbox to confirm — then you're on the list.",
+    invalid: "Enter a valid email so I can add you.",
+    error: "That didn't go through. Try again in a moment.",
+    privacy:
+      "I use EmailOctopus to send this. Unsubscribe anytime, or email me to be removed.",
   },
   live: {
     eyebrow: "Watch",

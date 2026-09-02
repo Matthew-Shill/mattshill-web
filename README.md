@@ -46,6 +46,7 @@ The booking form posts to [FormSubmit](https://formsubmit.co) at `contact@mattsh
 - **Site copy:** [`src/content/site-copy.ts`](src/content/site-copy.ts)
 - **Contact email:** Update `siteCopy.contact.email` in site-copy.ts
 - **Photos:** Replace placeholder blocks in `hero.tsx` and `about.tsx` when assets are ready
+- **Artist mailing list:** In Vercel, set `EMAILOCTOPUS_API_KEY`. `EMAILOCTOPUS_LIST_ID` is optional if the account has one list.
 
 ## Deploy to Vercel
 
@@ -82,3 +83,4 @@ After deploying to Vercel:
 - **Stripe Billing Portal** — linked from nav
 - **My Music Staff** — student portal and free trial widgets
 - **Scheduling** — embedded availability iframe at `/schedule`
+- **EmailOctopus** — artist mailing list on [music.mattshill.com](https://music.mattshill.com) (`EMAILOCTOPUS_API_KEY`, optional `EMAILOCTOPUS_LIST_ID`)
