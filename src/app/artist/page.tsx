@@ -29,8 +29,8 @@ export default function ArtistPage() {
             <Image
               src="/artist-hero.png"
               alt="Portrait of Matt Shill"
-              width={390}
-              height={627}
+              width={470}
+              height={597}
               priority
               className="h-auto w-full"
             />
